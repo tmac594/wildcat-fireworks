@@ -219,6 +219,11 @@ body {
 .tag-willow      { background: rgba(40,180,100,0.12);  color: #4ed68a;      border: 1px solid rgba(40,180,100,0.26); }
 .tag-blue        { background: rgba(50,120,255,0.12);  color: #7aabff;      border: 1px solid rgba(50,120,255,0.28); }
 .tag-fastpaced   { background: rgba(224,48,48,0.12);   color: #f07070;      border: 1px solid rgba(224,48,48,0.26); }
+.tag-brocade     { background: rgba(200,150,0,0.14);   color: #d4a800;      border: 1px solid rgba(200,150,0,0.30); }
+.tag-glitter     { background: rgba(255,100,180,0.12); color: #ff80c8;      border: 1px solid rgba(255,100,180,0.28); }
+.tag-color       { background: rgba(140,80,255,0.12);  color: #a87fff;      border: 1px solid rgba(140,80,255,0.26); }
+.tag-longshow    { background: rgba(0,180,160,0.10);   color: #00C4AE;      border: 1px solid rgba(0,180,160,0.26); }
+.tag-palm        { background: rgba(120,180,40,0.12);  color: #8ecf3a;      border: 1px solid rgba(120,180,40,0.28); }
 
 .product-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 7px; }
 .product-price  { font-size: 21px; font-weight: 900; color: var(--gold); }
@@ -355,32 +360,44 @@ body {
 <script>
 var PRODUCTS = [
   {
-    "id": "p00",
-    "name": "Zombie Cake",
-    "price": 200.0,
-    "category": "500g Cakes",
-    "description": "Watch in awe as Zombie Cake rises from the grave with a powerful ascent, awakening the night with its ghastly glow!",
-    "videoUrl": "public/videos/Zombie-Cake.mp4",
-    "thumbnailUrl": "public/images/Zombie Cake.png",
-    "tags": [
-      "Finale",
-      "Fan Favorite",
-      "Staff Pick"
-    ]
-  },
-  {
     "id": "p16",
     "name": "Willow Explosion",
     "price": 85.0,
     "category": "500g Cakes",
-    "description": "500-gram aerial cake that features 24 shots of fast-paced, massive Nishiki willows combined with vibrant blue stars.",
+    "description": "A rapid-fire 24-shot aerial cake that fills the sky with massive drooping golden willow bursts, each one showering brilliant blue stars as it falls. Beautiful, fast, and crowd-pleasing.",
     "videoUrl": "public/videos/willow-explosion.mp4",
     "thumbnailUrl": "public/images/willow-explosion.png",
-    "tags": [
-      "Willow Effect",
-      "Blue Stars",
-      "Fast-Paced"
-    ]
+    "tags": ["Willow Effect", "Blue Stars", "Fast-Paced"]
+  },
+  {
+    "id": "p01",
+    "name": "Whacky Tobacky",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "A sky-filling 9-shot powerhouse that launches massive golden sparkle bursts high into the air, each one raining glittering pink and red sparks at the center. Big, booming, and built to close the show.",
+    "videoUrl": "public/videos/whacky-tobacky.mp4",
+    "thumbnailUrl": "public/images/whacky-tobacky.png",
+    "tags": ["Finale", "Gold Brocade", "Glitter"]
+  },
+  {
+    "id": "p02",
+    "name": "Ghost Killer",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "Nine massive aerial bursts that slowly shift through hauntingly beautiful colors — warm peach, emerald green, and ocean blue — fading into each other for a mesmerizing 35–40 second sky show.",
+    "videoUrl": "public/videos/ghost-killer.mp4",
+    "thumbnailUrl": "public/images/ghost-killer.png",
+    "tags": ["Color Changing", "Long Show", "Fan Favorite"]
+  },
+  {
+    "id": "p03",
+    "name": "Double Down",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "A 9-shot aerial cake that throws up enormous ring-shaped bursts — golden palm tree rings, sparkling brocade rings, and bold color rings with a glittering red center. Layered, dramatic, and impossible to ignore.",
+    "videoUrl": "public/videos/double-down.mp4",
+    "thumbnailUrl": "public/images/double-down.png",
+    "tags": ["Finale", "Palm Effect", "Gold Brocade"]
   }
 ];
 
@@ -399,6 +416,11 @@ var TAG_CLASS = {
   "Willow Effect":  "tag-willow",
   "Blue Stars":     "tag-blue",
   "Fast-Paced":     "tag-fastpaced",
+  "Gold Brocade":   "tag-brocade",
+  "Glitter":        "tag-glitter",
+  "Color Changing": "tag-color",
+  "Long Show":      "tag-longshow",
+  "Palm Effect":    "tag-palm",
 };
 
 var state = { search:"", category:null, filter:null, sort:"default" };
