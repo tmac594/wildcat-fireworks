@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="theme-color" content="#1A6B1A"/>
+<link rel="manifest" href="manifest.json"/>
 <title>Wildcat Fireworks — Idalou, TX</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -300,6 +302,22 @@ body {
   letter-spacing: 0.05em;
 }
 .site-footer strong { color: var(--gold); }
+
+/* ── SOLD OUT ────────────────────── */
+.sold-out-overlay {
+  position: absolute; inset: 0; z-index: 3;
+  background: rgba(0,0,0,0.62);
+  display: flex; align-items: center; justify-content: center;
+}
+.sold-out-label {
+  background: var(--red); color: #fff;
+  font-size: 11px; font-weight: 900;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 5px;
+  transform: rotate(-18deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.product-card.is-sold-out { opacity: 0.6; }
 </style>
 </head>
 <body>
@@ -486,20 +504,21 @@ document.getElementById("modalClose").addEventListener("click", closeModal);
 overlay.addEventListener("click", function(e){ if(e.target===overlay) closeModal(); });
 document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeModal(); });
 
-function openModal(p) {
+function openModal(p, priceOverride) {
+  var displayPrice = (priceOverride!=null) ? priceOverride : p.price;
   modalMedia.innerHTML = p.videoUrl
     ? '<div class="modal-video-wrap"><video controls preload="none"'+(p.thumbnailUrl?' poster="'+p.thumbnailUrl+'"':'')+'>'+
       '<source src="'+p.videoUrl+'" type="video/mp4"></video></div>'
     : '<div class="no-video-ph"><div class="bige">'+p.emoji+'</div>'+
       '<p>Add video: <code>'+p.videoUrl+'</code></p></div>';
 
-  var tagsHtml = p.tags.map(function(t){
+  var tagsHtml = p.tags.filter(function(t){ return t !== "Staff Pick"; }).map(function(t){
     return '<span class="tag '+(TAG_CLASS[t]||"tag-value")+'">'+t+'</span>';
   }).join("");
   modalBody.innerHTML =
     '<div class="modal-cat">'+p.category+'</div>'+
     '<div class="modal-name">'+p.name+'</div>'+
-    '<div class="modal-price">$'+p.price.toFixed(2)+'</div>'+
+    '<div class="modal-price">$'+displayPrice.toFixed(2)+'</div>'+
     '<div class="modal-desc">'+p.description+'</div>'+
     '<div class="tags">'+tagsHtml+'</div>';
 
@@ -568,33 +587,36 @@ function render() {
     grid.innerHTML='<div class="empty"><div class="empty-icon">🎆</div><div class="empty-title">No products found</div><p style="font-size:14px;color:var(--muted)">Try a different search or clear your filters.</p></div>';
     return;
   }
+  var overrides = JSON.parse(localStorage.getItem("wf_overrides")||'{"soldOut":[],"prices":{}}');
   filtered.forEach(function(p){
-    var isStaff = p.tags.indexOf("Staff Pick")>-1;
+    var soldOut = overrides.soldOut.indexOf(p.id)>-1;
+    var price   = (overrides.prices[p.id]!=null) ? overrides.prices[p.id] : p.price;
     var tagsHtml = p.tags.filter(function(t){ return t !== "Staff Pick"; }).slice(0,3).map(function(t){
       return '<span class="tag '+(TAG_CLASS[t]||"tag-value")+'">'+t+'</span>';
     }).join("");
     var thumbHtml = p.thumbnailUrl
       ? '<img src="'+p.thumbnailUrl+'" alt="'+p.name+'" loading="lazy">'
       : '<span>'+p.emoji+'</span>';
+    var soldOutHtml = soldOut ? '<div class="sold-out-overlay"><div class="sold-out-label">Sold Out</div></div>' : '';
     var card = document.createElement("div");
-    card.className = "product-card";
+    card.className = "product-card" + (soldOut ? " is-sold-out" : "");
     card.innerHTML =
-      '<div class="product-thumb">'+thumbHtml+'<div class="play-icon">▶</div></div>'+
+      '<div class="product-thumb">'+thumbHtml+soldOutHtml+'<div class="play-icon">▶</div></div>'+
       '<div class="product-body">'+
         '<div class="product-cat">'+p.category+'</div>'+
         '<div class="product-name">'+p.name+'</div>'+
         '<div class="product-desc">'+p.description+'</div>'+
         '<div class="tags">'+tagsHtml+'</div>'+
         '<div class="product-footer">'+
-          '<div class="product-price">$'+p.price.toFixed(2)+'</div>'+
+          '<div class="product-price">$'+price.toFixed(2)+'</div>'+
           '<button class="btn-demo">▶ Demo</button>'+
         '</div>'+
       '</div>';
-    card.addEventListener("click", function(){ openModal(p); });
+    card.addEventListener("click", function(){ openModal(p, price); });
     grid.appendChild(card);
   });
 }
-// Try to reload from products.json if served via HTTP (Netlify/local server).
+// Try to reload from products.json if served via HTTP.
 // Falls back to the inline data above when opened as a local file.
 if (location.protocol !== 'file:') {
   fetch('public/products.json')
@@ -603,6 +625,11 @@ if (location.protocol !== 'file:') {
     .catch(function(){ render(); });
 } else {
   render();
+}
+
+// Register service worker for offline/PWA support
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
 }
 </script>
 </body>

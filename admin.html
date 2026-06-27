@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="theme-color" content="#1A6B1A"/>
+<title>Wildcat Admin</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:      #080F08;
+  --surface: #0F1A0F;
+  --surf2:   #172117;
+  --border:  #223322;
+  --green:   #1A6B1A;
+  --greenlt: #28A028;
+  --gold:    #F5C000;
+  --golddk:  #C09500;
+  --red:     #E03030;
+  --text:    #F2F0E6;
+  --muted:   #6E8A6E;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── LOGIN ── */
+#loginScreen {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; min-height: 100vh;
+  padding: 32px 20px; gap: 16px; text-align: center;
+}
+.login-logo { font-size: 48px; }
+.login-title { font-size: 22px; font-weight: 800; color: var(--gold); }
+.login-sub   { font-size: 13px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.pw-input {
+  width: 100%; max-width: 300px; padding: 14px 16px;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 12px; color: var(--text); font-size: 16px;
+  font-family: inherit; outline: none; text-align: center;
+  letter-spacing: 0.2em;
+}
+.pw-input:focus { border-color: var(--gold); }
+.btn-login {
+  width: 100%; max-width: 300px; padding: 14px;
+  background: var(--green); border: none; border-radius: 12px;
+  color: #fff; font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: inherit;
+}
+.btn-login:active { opacity: 0.8; }
+.login-error { color: var(--red); font-size: 13px; min-height: 18px; }
+
+/* ── ADMIN PANEL ── */
+#adminPanel { display: none; }
+
+.admin-header {
+  background: linear-gradient(90deg, var(--green) 0%, #0F3A0F 50%, var(--green) 100%);
+  padding: 14px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--golddk);
+  position: sticky; top: 0; z-index: 10;
+}
+.admin-header-title { font-size: 14px; font-weight: 800; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+.btn-logout {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text); font-size: 12px; font-weight: 600;
+  padding: 6px 12px; border-radius: 8px; cursor: pointer; font-family: inherit;
+}
+
+.admin-body { padding: 16px 12px 80px; max-width: 600px; margin: 0 auto; }
+
+.admin-section-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.20em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.admin-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+.admin-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 14px; margin-bottom: 10px;
+  transition: border-color 0.15s;
+}
+.admin-card.is-sold-out { border-color: var(--red); opacity: 0.75; }
+
+.admin-card-top {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.admin-thumb {
+  width: 52px; height: 52px; border-radius: 8px;
+  object-fit: cover; background: var(--surf2); flex-shrink: 0;
+}
+.admin-thumb-placeholder {
+  width: 52px; height: 52px; border-radius: 8px;
+  background: var(--surf2); display: flex; align-items: center;
+  justify-content: center; font-size: 24px; flex-shrink: 0;
+}
+.admin-card-name { font-size: 16px; font-weight: 800; }
+.admin-card-cat  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.sold-out-badge {
+  margin-left: auto; background: var(--red); color: #fff;
+  font-size: 9px; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.admin-card-controls {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+
+.price-wrap {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--surf2); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 8px 12px; flex: 1; min-width: 120px;
+}
+.price-wrap label { font-size: 12px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+.price-input {
+  background: none; border: none; outline: none;
+  color: var(--gold); font-size: 18px; font-weight: 800;
+  font-family: inherit; width: 80px;
+}
+
+.toggle-wrap {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surf2); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 8px 14px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.toggle-wrap label { font-size: 13px; font-weight: 600; cursor: pointer; user-select: none; }
+/* Toggle switch */
+.toggle-switch {
+  position: relative; width: 40px; height: 22px; flex-shrink: 0;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.toggle-track {
+  position: absolute; inset: 0; border-radius: 11px;
+  background: var(--border); transition: background 0.2s;
+  cursor: pointer;
+}
+.toggle-track::before {
+  content: ''; position: absolute;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--muted); top: 3px; left: 3px;
+  transition: transform 0.2s, background 0.2s;
+}
+.toggle-switch input:checked + .toggle-track { background: var(--red); }
+.toggle-switch input:checked + .toggle-track::before {
+  transform: translateX(18px); background: #fff;
+}
+
+.admin-save-note {
+  font-size: 11px; color: var(--muted); text-align: center;
+  margin-top: 6px;
+}
+
+/* Clear all */
+.btn-clear-all {
+  width: 100%; padding: 13px; margin-top: 20px;
+  background: none; border: 1.5px solid var(--border);
+  border-radius: 12px; color: var(--muted); font-size: 13px;
+  font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.btn-clear-all:active { opacity: 0.7; }
+
+/* Save flash */
+.save-flash {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: var(--greenlt); color: #fff; font-size: 13px; font-weight: 700;
+  padding: 10px 22px; border-radius: 20px; opacity: 0;
+  transition: opacity 0.3s; pointer-events: none; z-index: 100;
+  white-space: nowrap;
+}
+.save-flash.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- ── LOGIN ── -->
+<div id="loginScreen">
+  <div class="login-logo">🎆</div>
+  <div class="login-title">Wildcat Fireworks</div>
+  <div class="login-sub">Admin Access</div>
+  <input class="pw-input" type="password" id="pwInput" placeholder="Password" autocomplete="current-password"/>
+  <button class="btn-login" onclick="login()">Enter</button>
+  <div class="login-error" id="loginError"></div>
+</div>
+
+<!-- ── ADMIN PANEL ── -->
+<div id="adminPanel">
+  <div class="admin-header">
+    <div class="admin-header-title">⚡ Admin Panel</div>
+    <button class="btn-logout" onclick="logout()">Log Out</button>
+  </div>
+  <div class="admin-body">
+    <div class="admin-section-title">Products</div>
+    <div id="productList"></div>
+    <button class="btn-clear-all" onclick="clearAll()">Reset All Overrides</button>
+  </div>
+</div>
+
+<div class="save-flash" id="saveFlash">Saved ✓</div>
+
+<script>
+// ── Change this password to whatever you want ──
+var PASSWORD = 'wildcat2025';
+
+var STORAGE_KEY = 'wf_overrides';
+
+function getOverrides() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {soldOut:[],prices:{}}; }
+  catch(e) { return {soldOut:[],prices:{}}; }
+}
+function saveOverrides(o) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(o));
+  flashSaved();
+}
+function flashSaved() {
+  var el = document.getElementById('saveFlash');
+  el.classList.add('show');
+  clearTimeout(el._t);
+  el._t = setTimeout(function(){ el.classList.remove('show'); }, 1800);
+}
+
+// ── Auth ──
+function login() {
+  var val = document.getElementById('pwInput').value;
+  if (val === PASSWORD) {
+    localStorage.setItem('wf_admin_auth', '1');
+    showAdmin();
+  } else {
+    document.getElementById('loginError').textContent = 'Wrong password. Try again.';
+    document.getElementById('pwInput').value = '';
+  }
+}
+function logout() {
+  localStorage.removeItem('wf_admin_auth');
+  location.reload();
+}
+document.getElementById('pwInput').addEventListener('keydown', function(e){
+  if (e.key === 'Enter') login();
+});
+
+function showAdmin() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminPanel').style.display = 'block';
+  loadProducts();
+}
+
+if (localStorage.getItem('wf_admin_auth') === '1') showAdmin();
+
+// ── Products ──
+var PRODUCTS = [];
+
+function loadProducts() {
+  fetch('public/products.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){ PRODUCTS = data; renderProducts(); })
+    .catch(function(){ renderProducts(); });
+}
+
+function renderProducts() {
+  var overrides = getOverrides();
+  var list = document.getElementById('productList');
+  list.innerHTML = '';
+
+  if (!PRODUCTS.length) {
+    list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:24px;">No products found.</p>';
+    return;
+  }
+
+  PRODUCTS.forEach(function(p) {
+    var soldOut = overrides.soldOut.indexOf(p.id) > -1;
+    var price   = (overrides.prices[p.id] != null) ? overrides.prices[p.id] : p.price;
+
+    var card = document.createElement('div');
+    card.className = 'admin-card' + (soldOut ? ' is-sold-out' : '');
+    card.id = 'card-' + p.id;
+
+    var thumbHtml = p.thumbnailUrl
+      ? '<img class="admin-thumb" src="' + p.thumbnailUrl + '" alt="' + p.name + '">'
+      : '<div class="admin-thumb-placeholder">🎆</div>';
+
+    var badgeHtml = soldOut ? '<div class="sold-out-badge">Sold Out</div>' : '';
+
+    card.innerHTML =
+      '<div class="admin-card-top">' +
+        thumbHtml +
+        '<div>' +
+          '<div class="admin-card-name">' + p.name + '</div>' +
+          '<div class="admin-card-cat">' + p.category + '</div>' +
+        '</div>' +
+        badgeHtml +
+      '</div>' +
+      '<div class="admin-card-controls">' +
+        '<div class="price-wrap">' +
+          '<label>Price $</label>' +
+          '<input class="price-input" type="number" value="' + price + '" min="0" step="1" ' +
+            'id="price-' + p.id + '" onchange="updatePrice(\'' + p.id + '\', this.value)">' +
+        '</div>' +
+        '<div class="toggle-wrap" onclick="toggleSoldOut(\'' + p.id + '\')">' +
+          '<label>Sold Out</label>' +
+          '<div class="toggle-switch">' +
+            '<input type="checkbox" id="toggle-' + p.id + '"' + (soldOut ? ' checked' : '') + ' readonly>' +
+            '<div class="toggle-track"></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    list.appendChild(card);
+  });
+}
+
+function updatePrice(id, val) {
+  var price = parseFloat(val);
+  if (isNaN(price) || price < 0) return;
+  var o = getOverrides();
+  o.prices[id] = price;
+  saveOverrides(o);
+}
+
+function toggleSoldOut(id) {
+  var o = getOverrides();
+  var idx = o.soldOut.indexOf(id);
+  if (idx > -1) {
+    o.soldOut.splice(idx, 1);
+  } else {
+    o.soldOut.push(id);
+  }
+  saveOverrides(o);
+  renderProducts(); // re-render to update styling
+}
+
+function clearAll() {
+  if (!confirm('Reset all sold-out flags and price changes?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  renderProducts();
+  flashSaved();
+}
+</script>
+</body>
+</html>
