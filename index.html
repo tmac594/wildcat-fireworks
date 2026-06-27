@@ -333,7 +333,10 @@ body {
 <div class="products-grid" id="productsGrid"></div>
 
 <!-- FOOTER -->
-<footer class="site-footer">🐾 &nbsp; <strong>Wildcat Fireworks</strong> &nbsp;·&nbsp; Idalou, Texas &nbsp;·&nbsp; Proudly supporting Idalou ISD</footer>
+<footer class="site-footer">
+  <strong>Wildcat Fireworks</strong><br>
+  <a href="https://maps.google.com/?q=9620+E+Hwy+62-82,+Idalou,+TX+79329" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">📍 9620 E Hwy 62-82, Idalou, TX 79329</a>
+</footer>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
@@ -355,7 +358,21 @@ var PRODUCTS = [
     "description": "Watch in awe as Zombie Cake rises from the grave with a powerful ascent, awakening the night with its ghastly glow!",
     "videoUrl": "public/videos/Zombie-Cake.mp4",
     "thumbnailUrl": "public/images/Zombie Cake.png",
-    "tags": ["Loud", "Colorful", "Staff Pick"]
+    "tags": [
+      "Loud",
+      "Colorful",
+      "Staff Pick"
+    ]
+  },
+  {
+    "id": "p16",
+    "name": "Willow Explosion",
+    "price": 85.0,
+    "category": "500g Cakes",
+    "description": "500-gram aerial cake that features 24 shots of fast-paced, massive Nishiki willows combined with vibrant blue stars.",
+    "videoUrl": "public/videos/willow-explosion.mp4",
+    "thumbnailUrl": "public/images/willow-explosion.jpg",
+    "tags": []
   }
 ];
 
@@ -528,7 +545,6 @@ function render() {
     var card = document.createElement("div");
     card.className = "product-card";
     card.innerHTML =
-      (isStaff?'<div class="staff-badge">⭐ Staff Pick</div>':'')+
       '<div class="product-thumb">'+thumbHtml+'<div class="play-icon">▶</div></div>'+
       '<div class="product-body">'+
         '<div class="product-cat">'+p.category+'</div>'+
@@ -557,4 +573,4 @@ if (location.protocol !== 'file:') {
 </script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                             

@@ -12,5 +12,15 @@
       "Colorful",
       "Staff Pick"
     ]
+  },
+  {
+    "id": "p16",
+    "name": "Willow Explosion",
+    "price": 85.0,
+    "category": "500g Cakes",
+    "description": "500-gram aerial cake that features 24 shots of fast-paced, massive Nishiki willows combined with vibrant blue stars.",
+    "videoUrl": "public/videos/willow-explosion.mp4",
+    "thumbnailUrl": "public/images/willow-explosion.png",
+    "tags": []
   }
 ]
