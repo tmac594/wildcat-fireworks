@@ -1,0 +1,16 @@
+[
+  {
+    "id": "p00",
+    "name": "Zombie Cake",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "Watch in awe as Zombie Cake rises from the grave with a powerful ascent, awakening the night with its ghastly glow!",
+    "videoUrl": "public/videos/Zombie-Cake.mp4",
+    "thumbnailUrl": "public/images/Zombie Cake.png",
+    "tags": [
+      "Loud",
+      "Colorful",
+      "Staff Pick"
+    ]
+  }
+]
