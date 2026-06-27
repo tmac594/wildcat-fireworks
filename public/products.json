@@ -7,11 +7,7 @@
     "description": "Watch in awe as Zombie Cake rises from the grave with a powerful ascent, awakening the night with its ghastly glow!",
     "videoUrl": "public/videos/Zombie-Cake.mp4",
     "thumbnailUrl": "public/images/Zombie Cake.png",
-    "tags": [
-      "Loud",
-      "Colorful",
-      "Staff Pick"
-    ]
+    "tags": ["Finale", "Fan Favorite", "Staff Pick"]
   },
   {
     "id": "p16",
@@ -21,6 +17,6 @@
     "description": "500-gram aerial cake that features 24 shots of fast-paced, massive Nishiki willows combined with vibrant blue stars.",
     "videoUrl": "public/videos/willow-explosion.mp4",
     "thumbnailUrl": "public/images/willow-explosion.png",
-    "tags": []
+    "tags": ["Willow Effect", "Blue Stars", "Fast-Paced"]
   }
 ]

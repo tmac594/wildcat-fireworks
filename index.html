@@ -209,12 +209,16 @@ body {
 
 .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
 .tag { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-.tag-staff    { background: rgba(245,192,0,0.14);  color: var(--gold);    border: 1px solid rgba(245,192,0,0.28); }
-.tag-loud     { background: rgba(224,48,48,0.12);   color: #f07070;        border: 1px solid rgba(224,48,48,0.26); }
-.tag-colorful { background: rgba(140,80,255,0.12);  color: #a87fff;        border: 1px solid rgba(140,80,255,0.26); }
-.tag-family   { background: rgba(0,180,160,0.10);   color: #00C4AE;        border: 1px solid rgba(0,180,160,0.26); }
-.tag-value    { background: rgba(40,160,60,0.12);   color: #4ac46a;        border: 1px solid rgba(40,160,60,0.26); }
-.tag-finale   { background: rgba(230,110,0,0.12);   color: #ff9040;        border: 1px solid rgba(230,110,0,0.26); }
+.tag-staff       { background: rgba(245,192,0,0.14);   color: var(--gold);  border: 1px solid rgba(245,192,0,0.28); }
+.tag-loud        { background: rgba(224,48,48,0.12);   color: #f07070;      border: 1px solid rgba(224,48,48,0.26); }
+.tag-colorful    { background: rgba(140,80,255,0.12);  color: #a87fff;      border: 1px solid rgba(140,80,255,0.26); }
+.tag-family      { background: rgba(0,180,160,0.10);   color: #00C4AE;      border: 1px solid rgba(0,180,160,0.26); }
+.tag-value       { background: rgba(40,160,60,0.12);   color: #4ac46a;      border: 1px solid rgba(40,160,60,0.26); }
+.tag-finale      { background: rgba(230,110,0,0.12);   color: #ff9040;      border: 1px solid rgba(230,110,0,0.26); }
+.tag-favorite    { background: rgba(245,192,0,0.14);   color: var(--gold);  border: 1px solid rgba(245,192,0,0.28); }
+.tag-willow      { background: rgba(40,180,100,0.12);  color: #4ed68a;      border: 1px solid rgba(40,180,100,0.26); }
+.tag-blue        { background: rgba(50,120,255,0.12);  color: #7aabff;      border: 1px solid rgba(50,120,255,0.28); }
+.tag-fastpaced   { background: rgba(224,48,48,0.12);   color: #f07070;      border: 1px solid rgba(224,48,48,0.26); }
 
 .product-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 7px; }
 .product-price  { font-size: 21px; font-weight: 900; color: var(--gold); }
@@ -359,8 +363,8 @@ var PRODUCTS = [
     "videoUrl": "public/videos/Zombie-Cake.mp4",
     "thumbnailUrl": "public/images/Zombie Cake.png",
     "tags": [
-      "Loud",
-      "Colorful",
+      "Finale",
+      "Fan Favorite",
       "Staff Pick"
     ]
   },
@@ -372,7 +376,11 @@ var PRODUCTS = [
     "description": "500-gram aerial cake that features 24 shots of fast-paced, massive Nishiki willows combined with vibrant blue stars.",
     "videoUrl": "public/videos/willow-explosion.mp4",
     "thumbnailUrl": "public/images/willow-explosion.png",
-    "tags": []
+    "tags": [
+      "Willow Effect",
+      "Blue Stars",
+      "Fast-Paced"
+    ]
   }
 ];
 
@@ -387,6 +395,10 @@ var TAG_CLASS = {
   "Family Friendly":"tag-family",
   "Best Value":     "tag-value",
   "Finale":         "tag-finale",
+  "Fan Favorite":   "tag-favorite",
+  "Willow Effect":  "tag-willow",
+  "Blue Stars":     "tag-blue",
+  "Fast-Paced":     "tag-fastpaced",
 };
 
 var state = { search:"", category:null, filter:null, sort:"default" };
@@ -536,7 +548,7 @@ function render() {
   }
   filtered.forEach(function(p){
     var isStaff = p.tags.indexOf("Staff Pick")>-1;
-    var tagsHtml = p.tags.slice(0,3).map(function(t){
+    var tagsHtml = p.tags.filter(function(t){ return t !== "Staff Pick"; }).slice(0,3).map(function(t){
       return '<span class="tag '+(TAG_CLASS[t]||"tag-value")+'">'+t+'</span>';
     }).join("");
     var thumbHtml = p.thumbnailUrl
