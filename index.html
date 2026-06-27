@@ -203,6 +203,15 @@ body {
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   padding-left: 2px;
 }
+.no-video-badge {
+  position: absolute; bottom: 7px; right: 7px;
+  background: rgba(0,0,0,0.72); border: 1px solid rgba(255,255,255,0.12);
+  color: var(--muted); font-size: 8px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 7px; border-radius: 6px;
+  display: flex; align-items: center; gap: 4px;
+}
+.no-video-badge::before { content: '📷'; font-size: 9px; }
 
 .product-body { padding: 10px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
 .product-cat { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--greenlt); }
@@ -233,6 +242,10 @@ body {
   background: none; border: 1.5px solid var(--border); color: var(--muted);
   font-family: inherit; font-size: 11px; font-weight: 600;
   padding: 5px 9px; border-radius: 7px; cursor: pointer;
+}
+.no-demo-label {
+  font-size: 10px; font-weight: 600; color: var(--muted);
+  opacity: 0.6; letter-spacing: 0.03em;
 }
 
 /* ── EMPTY ───────────────────────── */
@@ -306,18 +319,19 @@ body {
 /* ── SOLD OUT ────────────────────── */
 .sold-out-overlay {
   position: absolute; inset: 0; z-index: 3;
-  background: rgba(0,0,0,0.62);
+  background: rgba(0,0,0,0.72);
   display: flex; align-items: center; justify-content: center;
 }
 .sold-out-label {
   background: var(--red); color: #fff;
-  font-size: 11px; font-weight: 900;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  padding: 5px 12px; border-radius: 5px;
+  font-size: 15px; font-weight: 900;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 8px 18px; border-radius: 6px;
   transform: rotate(-18deg);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.7);
+  border: 2px solid rgba(255,255,255,0.25);
 }
-.product-card.is-sold-out { opacity: 0.6; }
+.product-card.is-sold-out { opacity: 0.55; }
 </style>
 </head>
 <body>
@@ -378,6 +392,56 @@ body {
 <script>
 var PRODUCTS = [
   {
+    "id": "p08",
+    "name": "One Minute Revelry",
+    "price": 50.0,
+    "category": "500g Cakes",
+    "description": "30 colorful shots in three escalating acts — red palms blooming into gold willow, green palms bursting into red and silver glitter, then a brocade crown finale dripping with red and silver sparkle. A perfect starter show.",
+    "videoUrl": "public/videos/one-minute-revelry.mp4",
+    "thumbnailUrl": "public/images/one-minute-revelry.jpg",
+    "tags": ["Palm Effect", "Glitter"]
+  },
+  {
+    "id": "p11",
+    "name": "Firefly",
+    "price": 60.0,
+    "category": "500g Cakes",
+    "description": "16 big aerial breaks packed with red and silver bouquets, bright blue stars, and crackling flower bursts. Short, punchy, and incredibly satisfying.",
+    "videoUrl": "public/videos/firefly.mp4",
+    "thumbnailUrl": "public/images/firefly.png",
+    "tags": ["Blue Stars", "Fast-Paced"]
+  },
+  {
+    "id": "p13",
+    "name": "Band of Brothers",
+    "price": 60.0,
+    "category": "500g Cakes",
+    "description": "12 elegant aerial shots with flowing lace-style bursts that cycle through red, white, and blue — then purple and green — then green and blue — each one transitioning gracefully to brilliant white. Graceful and eye-catching.",
+    "videoUrl": "public/videos/band-of-brothers.mp4",
+    "thumbnailUrl": "public/images/band of brothers.png",
+    "tags": ["Color Changing"]
+  },
+  {
+    "id": "p09",
+    "name": "Sky Diving",
+    "price": 75.0,
+    "category": "500g Cakes",
+    "description": "Colorful smoke trails rise and bloom into parachute-style bursts in 5 vivid colors — then it finishes with 5 rapid-fire shots for a fun, one-of-a-kind finale the whole crowd will love.",
+    "videoUrl": "public/videos/sky-diving.mp4",
+    "thumbnailUrl": "public/images/sky-diving.jpg",
+    "tags": ["Color Changing", "Fast-Paced"]
+  },
+  {
+    "id": "p10",
+    "name": "Friday Night Frenzy",
+    "price": 75.0,
+    "category": "500g Cakes",
+    "description": "A colorful parade of silver and gold wandering bursts cycling through sea blue, red, baby green, orange, peach, and teal — finished with a crackling silver finale and brilliant red plum blossoms.",
+    "videoUrl": "public/videos/friday-night frenzy.mp4",
+    "thumbnailUrl": "public/images/friday-night frenzy.png",
+    "tags": ["Color Changing", "Glitter"]
+  },
+  {
     "id": "p16",
     "name": "Willow Explosion",
     "price": 85.0,
@@ -386,6 +450,46 @@ var PRODUCTS = [
     "videoUrl": "public/videos/willow-explosion.mp4",
     "thumbnailUrl": "public/images/willow-explosion.png",
     "tags": ["Willow Effect", "Blue Stars", "Fast-Paced"]
+  },
+  {
+    "id": "p07",
+    "name": "2 Minutes Extravaganza",
+    "price": 85.0,
+    "category": "500g Cakes",
+    "description": "63 shots and nearly 2 full minutes of nonstop sky action — palms, glitter, crackling rain, flying fish, peonies, and brocade crown bursts all capped with a rapid-fire finale. Our best bang for your buck.",
+    "videoUrl": "public/videos/2-minutes-extravaganza.mp4",
+    "thumbnailUrl": "public/images/2-minute-exxtravaganza.png",
+    "tags": ["Long Show", "Best Value"]
+  },
+  {
+    "id": "p04",
+    "name": "Voice of Monster",
+    "price": 100.0,
+    "category": "500g Cakes",
+    "description": "24 massive aerial shots that shake the sky with earth-rattling booms and enormous bursts. Intense, loud, and impossible to ignore — this one makes the whole neighborhood look up.",
+    "videoUrl": null,
+    "thumbnailUrl": "public/images/voice-of-monster.png",
+    "tags": ["Fast-Paced"]
+  },
+  {
+    "id": "p12",
+    "name": "Something Red White and Blue",
+    "price": 100.0,
+    "category": "500g Cakes",
+    "description": "A 34-shot patriotic showcase — silver crackling mines, red and blue comets, glowing dust, blue dahlias, and peonies in red and blue. Perfect for the Fourth of July or any time you want to light up the sky in American colors.",
+    "videoUrl": "public/videos/something-red-white-and-blue.mp4",
+    "thumbnailUrl": "public/images/something-red-white-and-blue.png",
+    "tags": ["Glitter"]
+  },
+  {
+    "id": "p06",
+    "name": "Steel Navy",
+    "price": 125.0,
+    "category": "500g Cakes",
+    "description": "78 shots fired in a Z-formation — colorful dahlia bursts, white glitter spreads, chrysanthemum breaks, and crackling red and green tails all build to a dramatic purple and green rain finale.",
+    "videoUrl": "public/videos/steel-navy.mp4",
+    "thumbnailUrl": "public/images/steel-navy.png",
+    "tags": ["Color Changing", "Glitter"]
   },
   {
     "id": "p01",
@@ -405,7 +509,7 @@ var PRODUCTS = [
     "description": "Nine massive aerial bursts that slowly shift through hauntingly beautiful colors — warm peach, emerald green, and ocean blue — fading into each other for a mesmerizing 35–40 second sky show.",
     "videoUrl": "public/videos/ghost-killer.mp4",
     "thumbnailUrl": "public/images/ghost-killer.png",
-    "tags": ["Color Changing", "Long Show", "Fan Favorite"]
+    "tags": ["Color Changing", "Long Show"]
   },
   {
     "id": "p03",
@@ -416,222 +520,7 @@ var PRODUCTS = [
     "videoUrl": "public/videos/double-down.mp4",
     "thumbnailUrl": "public/images/double-down.png",
     "tags": ["Finale", "Palm Effect", "Gold Brocade"]
-  }
-];
-
-var CATEGORIES = [
-  { label:"500g Cakes", emoji:"🎆" },
-];
-
-var TAG_CLASS = {
-  "Staff Pick":     "tag-staff",
-  "Loud":           "tag-loud",
-  "Colorful":       "tag-colorful",
-  "Family Friendly":"tag-family",
-  "Best Value":     "tag-value",
-  "Finale":         "tag-finale",
-  "Fan Favorite":   "tag-favorite",
-  "Willow Effect":  "tag-willow",
-  "Blue Stars":     "tag-blue",
-  "Fast-Paced":     "tag-fastpaced",
-  "Gold Brocade":   "tag-brocade",
-  "Glitter":        "tag-glitter",
-  "Color Changing": "tag-color",
-  "Long Show":      "tag-longshow",
-  "Palm Effect":    "tag-palm",
-};
-
-var state = { search:"", category:null, filter:null, sort:"default" };
-
-// Build category cards
-var catGrid = document.getElementById("catGrid");
-CATEGORIES.forEach(function(c) {
-  var div = document.createElement("div");
-  div.className = "cat-card";
-  div.dataset.cat = c.label;
-  div.innerHTML = '<div class="cat-icon">'+c.emoji+'</div><div class="cat-label">'+c.label+'</div>';
-  div.addEventListener("click", function() {
-    if (c.label === "Staff Picks")      { toggleFilter("Staff Pick"); return; }
-    if (c.label === "Family Friendly")  { toggleFilter("Family Friendly"); return; }
-    state.category = (state.category === c.label) ? null : c.label;
-    render();
-  });
-  catGrid.appendChild(div);
-});
-
-// Chips
-document.querySelectorAll(".chip").forEach(function(btn) {
-  btn.addEventListener("click", function() {
-    var f = btn.dataset.filter;
-    if (f === "all") {
-      state.filter = null; state.category = null; state.search = "";
-      document.getElementById("searchInput").value = "";
-      document.getElementById("clearBtn").style.display = "none";
-    } else {
-      toggleFilter(f); return;
-    }
-    render();
-  });
-});
-function toggleFilter(f) { state.filter = (state.filter === f) ? null : f; render(); }
-
-// Sort
-document.getElementById("sortSelect").addEventListener("change", function() { state.sort = this.value; render(); });
-
-// Search
-var searchInput = document.getElementById("searchInput");
-var clearBtn    = document.getElementById("clearBtn");
-searchInput.addEventListener("input", function() {
-  state.search = this.value;
-  clearBtn.style.display = this.value ? "block" : "none";
-  render();
-});
-clearBtn.addEventListener("click", function() {
-  state.search = ""; searchInput.value = ""; clearBtn.style.display = "none"; render();
-});
-
-// Clear all
-document.getElementById("clearAllBtn").addEventListener("click", function() {
-  state.search=""; state.category=null; state.filter=null;
-  searchInput.value=""; clearBtn.style.display="none"; render();
-});
-
-// Modal
-var overlay   = document.getElementById("modalOverlay");
-var modalMedia= document.getElementById("modalMedia");
-var modalBody = document.getElementById("modalBody");
-document.getElementById("modalClose").addEventListener("click", closeModal);
-overlay.addEventListener("click", function(e){ if(e.target===overlay) closeModal(); });
-document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeModal(); });
-
-function openModal(p, priceOverride) {
-  var displayPrice = (priceOverride!=null) ? priceOverride : p.price;
-  modalMedia.innerHTML = p.videoUrl
-    ? '<div class="modal-video-wrap"><video controls preload="none"'+(p.thumbnailUrl?' poster="'+p.thumbnailUrl+'"':'')+'>'+
-      '<source src="'+p.videoUrl+'" type="video/mp4"></video></div>'
-    : '<div class="no-video-ph"><div class="bige">'+p.emoji+'</div>'+
-      '<p>Add video: <code>'+p.videoUrl+'</code></p></div>';
-
-  var tagsHtml = p.tags.filter(function(t){ return t !== "Staff Pick"; }).map(function(t){
-    return '<span class="tag '+(TAG_CLASS[t]||"tag-value")+'">'+t+'</span>';
-  }).join("");
-  modalBody.innerHTML =
-    '<div class="modal-cat">'+p.category+'</div>'+
-    '<div class="modal-name">'+p.name+'</div>'+
-    '<div class="modal-price">$'+displayPrice.toFixed(2)+'</div>'+
-    '<div class="modal-desc">'+p.description+'</div>'+
-    '<div class="tags">'+tagsHtml+'</div>';
-
-  overlay.classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-function closeModal() {
-  var vid = overlay.querySelector("video");
-  if (vid) vid.pause();
-  overlay.classList.remove("open");
-  document.body.style.overflow = "";
-}
-
-// Render
-function getFiltered() {
-  var list = PRODUCTS.slice();
-  if (state.search.trim()) {
-    var q = state.search.toLowerCase();
-    list = list.filter(function(p){
-      return p.name.toLowerCase().indexOf(q)>-1 ||
-             p.description.toLowerCase().indexOf(q)>-1 ||
-             p.category.toLowerCase().indexOf(q)>-1;
-    });
-  }
-  if (state.category) list = list.filter(function(p){ return p.category===state.category; });
-  if (state.filter)   list = list.filter(function(p){ return p.tags.indexOf(state.filter)>-1; });
-  if (state.sort==="price-asc")  list.sort(function(a,b){ return a.price-b.price; });
-  if (state.sort==="price-desc") list.sort(function(a,b){ return b.price-a.price; });
-  if (state.sort==="name")       list.sort(function(a,b){ return a.name.localeCompare(b.name); });
-  return list;
-}
-
-function render() {
-  var filtered = getFiltered();
-  var hasFilter = state.category || state.filter || state.search;
-
-  document.getElementById("productCount").textContent =
-    filtered.length + (filtered.length===1?" product":" products");
-  document.getElementById("clearAllBtn").style.display = hasFilter ? "inline" : "none";
-
-  // Chip states
-  document.querySelectorAll(".chip").forEach(function(btn){
-    var f = btn.dataset.filter;
-    btn.className = "chip";
-    if (f==="all" && !state.filter && !state.category && !state.search) btn.classList.add("on-gold");
-    else if (f===state.filter) {
-      if (f==="Loud") btn.classList.add("on-red");
-      else if (f==="Family Friendly") btn.classList.add("on-teal");
-      else btn.classList.add("on-gold");
-    }
-  });
-
-  // Cat card states
-  document.querySelectorAll(".cat-card").forEach(function(card){
-    var cat = card.dataset.cat;
-    var on = cat===state.category ||
-             (cat==="Staff Picks" && state.filter==="Staff Pick") ||
-             (cat==="Family Friendly" && state.filter==="Family Friendly");
-    card.classList.toggle("active", on);
-  });
-
-  // Product grid
-  var grid = document.getElementById("productsGrid");
-  grid.innerHTML = "";
-  if (!filtered.length) {
-    grid.innerHTML='<div class="empty"><div class="empty-icon">🎆</div><div class="empty-title">No products found</div><p style="font-size:14px;color:var(--muted)">Try a different search or clear your filters.</p></div>';
-    return;
-  }
-  var overrides = JSON.parse(localStorage.getItem("wf_overrides")||'{"soldOut":[],"prices":{}}');
-  filtered.forEach(function(p){
-    var soldOut = overrides.soldOut.indexOf(p.id)>-1;
-    var price   = (overrides.prices[p.id]!=null) ? overrides.prices[p.id] : p.price;
-    var tagsHtml = p.tags.filter(function(t){ return t !== "Staff Pick"; }).slice(0,3).map(function(t){
-      return '<span class="tag '+(TAG_CLASS[t]||"tag-value")+'">'+t+'</span>';
-    }).join("");
-    var thumbHtml = p.thumbnailUrl
-      ? '<img src="'+p.thumbnailUrl+'" alt="'+p.name+'" loading="lazy">'
-      : '<span>'+p.emoji+'</span>';
-    var soldOutHtml = soldOut ? '<div class="sold-out-overlay"><div class="sold-out-label">Sold Out</div></div>' : '';
-    var card = document.createElement("div");
-    card.className = "product-card" + (soldOut ? " is-sold-out" : "");
-    card.innerHTML =
-      '<div class="product-thumb">'+thumbHtml+soldOutHtml+'<div class="play-icon">▶</div></div>'+
-      '<div class="product-body">'+
-        '<div class="product-cat">'+p.category+'</div>'+
-        '<div class="product-name">'+p.name+'</div>'+
-        '<div class="product-desc">'+p.description+'</div>'+
-        '<div class="tags">'+tagsHtml+'</div>'+
-        '<div class="product-footer">'+
-          '<div class="product-price">$'+price.toFixed(2)+'</div>'+
-          '<button class="btn-demo">▶ Demo</button>'+
-        '</div>'+
-      '</div>';
-    card.addEventListener("click", function(){ openModal(p, price); });
-    grid.appendChild(card);
-  });
-}
-// Try to reload from products.json if served via HTTP.
-// Falls back to the inline data above when opened as a local file.
-if (location.protocol !== 'file:') {
-  fetch('public/products.json')
-    .then(function(r){ return r.json(); })
-    .then(function(data){ PRODUCTS = data; render(); })
-    .catch(function(){ render(); });
-} else {
-  render();
-}
-
-// Register service worker for offline/PWA support
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
-}
-</script>
-</body>
-</html>
-                                                                                                                                                                                                                                                                                             
+  },
+  {
+    "id": "p05",
+    "name

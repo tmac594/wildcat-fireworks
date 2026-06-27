@@ -1,6 +1,5 @@
-const CACHE = 'wildcat-v1';
+const CACHE = 'wildcat-v3';
 
-// All assets to pre-cache on install
 const ASSETS = [
   '/',
   '/index.html',
@@ -8,17 +7,37 @@ const ASSETS = [
   '/manifest.json',
   '/public/products.json',
   '/public/wildcat-logo.png',
+  // Images
+  '/public/images/one-minute-revelry.jpg',
+  '/public/images/firefly.png',
+  '/public/images/band of brothers.png',
+  '/public/images/sky-diving.jpg',
+  '/public/images/friday-night frenzy.png',
   '/public/images/willow-explosion.png',
+  '/public/images/2-minute-exxtravaganza.png',
+  '/public/images/voice-of-monster.png',
+  '/public/images/something-red-white-and-blue.png',
+  '/public/images/steel-navy.png',
   '/public/images/whacky-tobacky.png',
   '/public/images/ghost-killer.png',
   '/public/images/double-down.png',
+  '/public/images/midnight.jpg',
+  // Videos
+  '/public/videos/one-minute-revelry.mp4',
+  '/public/videos/firefly.mp4',
+  '/public/videos/band-of-brothers.mp4',
+  '/public/videos/sky-diving.mp4',
+  '/public/videos/friday-night frenzy.mp4',
   '/public/videos/willow-explosion.mp4',
+  '/public/videos/2-minutes-extravaganza.mp4',
+  '/public/videos/something-red-white-and-blue.mp4',
+  '/public/videos/steel-navy.mp4',
   '/public/videos/whacky-tobacky.mp4',
   '/public/videos/ghost-killer.mp4',
   '/public/videos/double-down.mp4',
+  '/public/videos/midnight.mp4',
 ];
 
-// Pre-cache everything on install
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE).then(cache => cache.addAll(ASSETS))
@@ -26,7 +45,6 @@ self.addEventListener('install', e => {
   self.skipWaiting();
 });
 
-// Remove old caches on activate
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
@@ -36,15 +54,12 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
-// Serve from cache first, fall back to network
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
-
   e.respondWith(
     caches.match(e.request).then(cached => {
       if (cached) return cached;
       return fetch(e.request).then(res => {
-        // Cache successful responses dynamically (e.g. new images added later)
         if (res && res.status === 200) {
           const clone = res.clone();
           caches.open(CACHE).then(c => c.put(e.request, clone));

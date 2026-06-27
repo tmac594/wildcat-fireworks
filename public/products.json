@@ -1,5 +1,55 @@
 [
   {
+    "id": "p08",
+    "name": "One Minute Revelry",
+    "price": 50.0,
+    "category": "500g Cakes",
+    "description": "30 colorful shots in three escalating acts — red palms blooming into gold willow, green palms bursting into red and silver glitter, then a brocade crown finale dripping with red and silver sparkle. A perfect starter show.",
+    "videoUrl": "public/videos/one-minute-revelry.mp4",
+    "thumbnailUrl": "public/images/one-minute-revelry.jpg",
+    "tags": ["Palm Effect", "Glitter"]
+  },
+  {
+    "id": "p11",
+    "name": "Firefly",
+    "price": 60.0,
+    "category": "500g Cakes",
+    "description": "16 big aerial breaks packed with red and silver bouquets, bright blue stars, and crackling flower bursts. Short, punchy, and incredibly satisfying.",
+    "videoUrl": "public/videos/firefly.mp4",
+    "thumbnailUrl": "public/images/firefly.png",
+    "tags": ["Blue Stars", "Fast-Paced"]
+  },
+  {
+    "id": "p13",
+    "name": "Band of Brothers",
+    "price": 60.0,
+    "category": "500g Cakes",
+    "description": "12 elegant aerial shots with flowing lace-style bursts that cycle through red, white, and blue — then purple and green — then green and blue — each one transitioning gracefully to brilliant white. Graceful and eye-catching.",
+    "videoUrl": "public/videos/band-of-brothers.mp4",
+    "thumbnailUrl": "public/images/band of brothers.png",
+    "tags": ["Color Changing"]
+  },
+  {
+    "id": "p09",
+    "name": "Sky Diving",
+    "price": 75.0,
+    "category": "500g Cakes",
+    "description": "Colorful smoke trails rise and bloom into parachute-style bursts in 5 vivid colors — then it finishes with 5 rapid-fire shots for a fun, one-of-a-kind finale the whole crowd will love.",
+    "videoUrl": "public/videos/sky-diving.mp4",
+    "thumbnailUrl": "public/images/sky-diving.jpg",
+    "tags": ["Color Changing", "Fast-Paced"]
+  },
+  {
+    "id": "p10",
+    "name": "Friday Night Frenzy",
+    "price": 75.0,
+    "category": "500g Cakes",
+    "description": "A colorful parade of silver and gold wandering bursts cycling through sea blue, red, baby green, orange, peach, and teal — finished with a crackling silver finale and brilliant red plum blossoms.",
+    "videoUrl": "public/videos/friday-night frenzy.mp4",
+    "thumbnailUrl": "public/images/friday-night frenzy.png",
+    "tags": ["Color Changing", "Glitter"]
+  },
+  {
     "id": "p16",
     "name": "Willow Explosion",
     "price": 85.0,
@@ -8,6 +58,46 @@
     "videoUrl": "public/videos/willow-explosion.mp4",
     "thumbnailUrl": "public/images/willow-explosion.png",
     "tags": ["Willow Effect", "Blue Stars", "Fast-Paced"]
+  },
+  {
+    "id": "p07",
+    "name": "2 Minutes Extravaganza",
+    "price": 85.0,
+    "category": "500g Cakes",
+    "description": "63 shots and nearly 2 full minutes of nonstop sky action — palms, glitter, crackling rain, flying fish, peonies, and brocade crown bursts all capped with a rapid-fire finale. Our best bang for your buck.",
+    "videoUrl": "public/videos/2-minutes-extravaganza.mp4",
+    "thumbnailUrl": "public/images/2-minute-exxtravaganza.png",
+    "tags": ["Long Show", "Best Value"]
+  },
+  {
+    "id": "p04",
+    "name": "Voice of Monster",
+    "price": 100.0,
+    "category": "500g Cakes",
+    "description": "24 massive aerial shots that shake the sky with earth-rattling booms and enormous bursts. Intense, loud, and impossible to ignore — this one makes the whole neighborhood look up.",
+    "videoUrl": null,
+    "thumbnailUrl": "public/images/voice-of-monster.png",
+    "tags": ["Fast-Paced"]
+  },
+  {
+    "id": "p12",
+    "name": "Something Red White and Blue",
+    "price": 100.0,
+    "category": "500g Cakes",
+    "description": "A 34-shot patriotic showcase — silver crackling mines, red and blue comets, glowing dust, blue dahlias, and peonies in red and blue. Perfect for the Fourth of July or any time you want to light up the sky in American colors.",
+    "videoUrl": "public/videos/something-red-white-and-blue.mp4",
+    "thumbnailUrl": "public/images/something-red-white-and-blue.png",
+    "tags": ["Glitter"]
+  },
+  {
+    "id": "p06",
+    "name": "Steel Navy",
+    "price": 125.0,
+    "category": "500g Cakes",
+    "description": "78 shots fired in a Z-formation — colorful dahlia bursts, white glitter spreads, chrysanthemum breaks, and crackling red and green tails all build to a dramatic purple and green rain finale.",
+    "videoUrl": "public/videos/steel-navy.mp4",
+    "thumbnailUrl": "public/images/steel-navy.png",
+    "tags": ["Color Changing", "Glitter"]
   },
   {
     "id": "p01",
@@ -27,7 +117,7 @@
     "description": "Nine massive aerial bursts that slowly shift through hauntingly beautiful colors — warm peach, emerald green, and ocean blue — fading into each other for a mesmerizing 35–40 second sky show.",
     "videoUrl": "public/videos/ghost-killer.mp4",
     "thumbnailUrl": "public/images/ghost-killer.png",
-    "tags": ["Color Changing", "Long Show", "Fan Favorite"]
+    "tags": ["Color Changing", "Long Show"]
   },
   {
     "id": "p03",
@@ -38,5 +128,15 @@
     "videoUrl": "public/videos/double-down.mp4",
     "thumbnailUrl": "public/images/double-down.png",
     "tags": ["Finale", "Palm Effect", "Gold Brocade"]
+  },
+  {
+    "id": "p05",
+    "name": "Midnight",
+    "price": 250.0,
+    "category": "500g Cakes",
+    "description": "Our biggest show in a single box — 204 shots of Z-shaped star formations, crackling comet tails, palm bursts, and whistling ascents that build for nearly 3 minutes before detonating in a thundering 3-shot silver finale.",
+    "videoUrl": "public/videos/midnight.mp4",
+    "thumbnailUrl": "public/images/midnight.jpg",
+    "tags": ["Finale", "Long Show", "Palm Effect"]
   }
 ]
