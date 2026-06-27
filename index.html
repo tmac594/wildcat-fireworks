@@ -523,4 +523,240 @@ var PRODUCTS = [
   },
   {
     "id": "p05",
-    "name
+    "name": "Midnight",
+    "price": 250.0,
+    "category": "500g Cakes",
+    "description": "Our biggest show in a single box — 204 shots of Z-shaped star formations, crackling comet tails, palm bursts, and whistling ascents that build for nearly 3 minutes before detonating in a thundering 3-shot silver finale.",
+    "videoUrl": "public/videos/midnight.mp4",
+    "thumbnailUrl": "public/images/midnight.jpg",
+    "tags": ["Finale", "Long Show", "Palm Effect"]
+  }
+];
+
+var CATEGORIES = [
+  { label:"500g Cakes", emoji:"🎆" },
+];
+
+var TAG_CLASS = {
+  "Staff Pick":     "tag-staff",
+  "Loud":           "tag-loud",
+  "Colorful":       "tag-colorful",
+  "Family Friendly":"tag-family",
+  "Best Value":     "tag-value",
+  "Finale":         "tag-finale",
+  "Fan Favorite":   "tag-favorite",
+  "Willow Effect":  "tag-willow",
+  "Blue Stars":     "tag-blue",
+  "Fast-Paced":     "tag-fastpaced",
+  "Gold Brocade":   "tag-brocade",
+  "Glitter":        "tag-glitter",
+  "Color Changing": "tag-color",
+  "Long Show":      "tag-longshow",
+  "Palm Effect":    "tag-palm",
+};
+
+var state = { search:"", category:null, filter:null, sort:"default" };
+
+// Build category cards
+var catGrid = document.getElementById("catGrid");
+CATEGORIES.forEach(function(c) {
+  var div = document.createElement("div");
+  div.className = "cat-card";
+  div.dataset.cat = c.label;
+  div.innerHTML = '<div class="cat-icon">'+c.emoji+'</div><div class="cat-label">'+c.label+'</div>';
+  div.addEventListener("click", function() {
+    if (c.label === "Staff Picks")      { toggleFilter("Staff Pick"); return; }
+    if (c.label === "Family Friendly")  { toggleFilter("Family Friendly"); return; }
+    state.category = (state.category === c.label) ? null : c.label;
+    render();
+  });
+  catGrid.appendChild(div);
+});
+
+// Chips
+document.querySelectorAll(".chip").forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    var f = btn.dataset.filter;
+    if (f === "all") {
+      state.filter = null; state.category = null; state.search = "";
+      document.getElementById("searchInput").value = "";
+    } else {
+      toggleFilter(f);
+    }
+    render();
+  });
+});
+function toggleFilter(f) {
+  state.filter = (state.filter === f) ? null : f;
+  state.category = null;
+}
+
+// Sort
+document.getElementById("sortSelect").addEventListener("change", function(){
+  state.sort = this.value; render();
+});
+
+// Search
+var searchInput = document.getElementById("searchInput");
+var clearBtn    = document.getElementById("clearBtn");
+searchInput.addEventListener("input", function(){
+  state.search = this.value;
+  clearBtn.style.display = this.value ? "block" : "none";
+  render();
+});
+clearBtn.addEventListener("click", function(){
+  state.search = ""; searchInput.value = "";
+  clearBtn.style.display = "none"; render();
+});
+document.getElementById("clearAllBtn").addEventListener("click", function(){
+  state.search = ""; state.category = null; state.filter = null;
+  searchInput.value = ""; clearBtn.style.display = "none";
+  render();
+});
+
+// Modal
+var overlay    = document.getElementById("modalOverlay");
+var modalMedia = document.getElementById("modalMedia");
+var modalBody  = document.getElementById("modalBody");
+document.getElementById("modalClose").addEventListener("click", closeModal);
+overlay.addEventListener("click", function(e){ if(e.target===overlay) closeModal(); });
+document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeModal(); });
+
+function openModal(p, priceOverride) {
+  var displayPrice = (priceOverride!=null) ? priceOverride : p.price;
+  modalMedia.innerHTML = p.videoUrl
+    ? '<div class="modal-video-wrap"><video controls preload="none"'+(p.thumbnailUrl?' poster="'+p.thumbnailUrl+'"':'')+'>'+
+      '<source src="'+p.videoUrl+'" type="video/mp4"></video></div>'
+    : '<div class="no-video-ph"><p style="color:var(--muted);font-size:13px;padding:40px 20px;text-align:center;">No video available</p></div>';
+
+  var tagsHtml = p.tags.filter(function(t){ return t !== "Staff Pick"; }).map(function(t){
+    return '<span class="tag '+(TAG_CLASS[t]||"tag-value")+'">'+t+'</span>';
+  }).join("");
+  modalBody.innerHTML =
+    '<div class="modal-cat">'+p.category+'</div>'+
+    '<div class="modal-name">'+p.name+'</div>'+
+    '<div class="modal-price">$'+displayPrice.toFixed(2)+'</div>'+
+    '<div class="modal-desc">'+p.description+'</div>'+
+    '<div class="tags">'+tagsHtml+'</div>';
+
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  var vid = overlay.querySelector("video");
+  if (vid) vid.pause();
+  overlay.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+// Render
+function getFiltered() {
+  var list = PRODUCTS.slice();
+  if (state.search.trim()) {
+    var q = state.search.toLowerCase();
+    list = list.filter(function(p){
+      return p.name.toLowerCase().indexOf(q)>-1 ||
+             p.description.toLowerCase().indexOf(q)>-1 ||
+             p.category.toLowerCase().indexOf(q)>-1;
+    });
+  }
+  if (state.category) list = list.filter(function(p){ return p.category===state.category; });
+  if (state.filter)   list = list.filter(function(p){ return p.tags.indexOf(state.filter)>-1; });
+  if (state.sort==="price-asc")  list.sort(function(a,b){ return a.price-b.price; });
+  if (state.sort==="price-desc") list.sort(function(a,b){ return b.price-a.price; });
+  if (state.sort==="name")       list.sort(function(a,b){ return a.name.localeCompare(b.name); });
+  return list;
+}
+
+function render() {
+  var filtered = getFiltered();
+  var hasFilter = state.category || state.filter || state.search;
+
+  document.getElementById("productCount").textContent =
+    filtered.length + (filtered.length===1?" product":" products");
+  document.getElementById("clearAllBtn").style.display = hasFilter ? "inline" : "none";
+
+  // Chip states
+  document.querySelectorAll(".chip").forEach(function(btn){
+    var f = btn.dataset.filter;
+    btn.className = "chip";
+    if (f==="all" && !state.filter && !state.category && !state.search) btn.classList.add("on-gold");
+    else if (f===state.filter) {
+      if (f==="Loud") btn.classList.add("on-red");
+      else if (f==="Family Friendly") btn.classList.add("on-teal");
+      else btn.classList.add("on-gold");
+    }
+  });
+
+  // Cat card states
+  document.querySelectorAll(".cat-card").forEach(function(card){
+    var cat = card.dataset.cat;
+    var on = cat===state.category ||
+             (cat==="Staff Picks" && state.filter==="Staff Pick") ||
+             (cat==="Family Friendly" && state.filter==="Family Friendly");
+    card.classList.toggle("active", on);
+  });
+
+  // Product grid
+  var grid = document.getElementById("productsGrid");
+  grid.innerHTML = "";
+  if (!filtered.length) {
+    grid.innerHTML='<div class="empty"><div class="empty-icon">🎆</div><div class="empty-title">No products found</div><p style="font-size:14px;color:var(--muted)">Try a different search or clear your filters.</p></div>';
+    return;
+  }
+  var overrides = JSON.parse(localStorage.getItem("wf_overrides")||'{"soldOut":[],"prices":{}}');
+  filtered.sort(function(a,b){
+    var aOut = overrides.soldOut.indexOf(a.id)>-1 ? 1 : 0;
+    var bOut = overrides.soldOut.indexOf(b.id)>-1 ? 1 : 0;
+    return aOut - bOut;
+  });
+  filtered.forEach(function(p){
+    var soldOut = overrides.soldOut.indexOf(p.id)>-1;
+    var price   = (overrides.prices[p.id]!=null) ? overrides.prices[p.id] : p.price;
+    var tagsHtml = p.tags.filter(function(t){ return t !== "Staff Pick"; }).slice(0,3).map(function(t){
+      return '<span class="tag '+(TAG_CLASS[t]||"tag-value")+'">'+t+'</span>';
+    }).join("");
+    var thumbHtml = p.thumbnailUrl
+      ? '<img src="'+p.thumbnailUrl+'" alt="'+p.name+'" loading="lazy">'
+      : '<span>🎆</span>';
+    var soldOutHtml = soldOut ? '<div class="sold-out-overlay"><div class="sold-out-label">Sold Out</div></div>' : '';
+    var mediaCornerHtml = p.videoUrl
+      ? '<div class="play-icon">▶</div>'
+      : '<div class="no-video-badge">Photo only</div>';
+    var demoBtnHtml = p.videoUrl
+      ? '<button class="btn-demo">▶ Demo</button>'
+      : '<span class="no-demo-label">📷 Photo only</span>';
+    var card = document.createElement("div");
+    card.className = "product-card" + (soldOut ? " is-sold-out" : "");
+    card.innerHTML =
+      '<div class="product-thumb">'+thumbHtml+soldOutHtml+mediaCornerHtml+'</div>'+
+      '<div class="product-body">'+
+        '<div class="product-cat">'+p.category+'</div>'+
+        '<div class="product-name">'+p.name+'</div>'+
+        '<div class="product-desc">'+p.description+'</div>'+
+        '<div class="tags">'+tagsHtml+'</div>'+
+        '<div class="product-footer">'+
+          '<div class="product-price">$'+price.toFixed(2)+'</div>'+
+          demoBtnHtml+
+        '</div>'+
+      '</div>';
+    card.addEventListener("click", function(){ openModal(p, price); });
+    grid.appendChild(card);
+  });
+}
+
+if (location.protocol !== 'file:') {
+  fetch('public/products.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){ PRODUCTS = data; render(); })
+    .catch(function(){ render(); });
+} else {
+  render();
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
+</body>
+</html>
