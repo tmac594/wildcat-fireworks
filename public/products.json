@@ -348,5 +348,35 @@
     "videoUrl": "/public/videos/sword-master.mp4",
     "thumbnailUrl": "/public/images/sword-master.png",
     "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p38",
+    "name": "2nd Amendment",
+    "price": 20.0,
+    "category": "Fountains",
+    "description": "A patriotic-themed ground fountain from Top Gun Fireworks that bursts with red, white, and blue sparkling effects, silver crackling showers, and a bold star-filled finale. A great salute to American pride.",
+    "videoUrl": "/public/videos/2nd-amendment.mp4",
+    "thumbnailUrl": "/public/images/2nd-amendment.jpg",
+    "tags": ["Colorful"]
+  },
+  {
+    "id": "p39",
+    "name": "Ladybug",
+    "price": 6.50,
+    "category": "Novelties",
+    "description": "A ladybug-themed spinner that spins wildly on the ground with a whistling effect, then launches itself into the air and bursts into red or green stars. Inexpensive, surprising, and always gets a reaction.",
+    "videoUrl": "/public/videos/lady-bugs.mp4",
+    "thumbnailUrl": "/public/images/lady-bug.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p40",
+    "name": "Danger Zone",
+    "price": 6.50,
+    "category": "Novelties",
+    "description": "A two-pack of handheld smoke sticks — one bold red and one bright orange — that pour out thick, vivid color smoke for a dramatic daytime effect. Great for photos, celebrations, and parties.",
+    "videoUrl": "/public/videos/danger-zone.mp4",
+    "thumbnailUrl": null,
+    "tags": ["Family Friendly"]
   }
 ]
