@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <meta name="theme-color" content="#1A6B1A"/>
 <link rel="manifest" href="manifest.json"/>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <title>Wildcat Fireworks — Idalou, TX</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -390,6 +392,8 @@ body {
 </div>
 
 <script>
+var DB_OVERRIDES = {soldOut:[], prices:{}};
+
 var PRODUCTS = [
   {
     "id": "p08",
@@ -704,7 +708,7 @@ function render() {
     grid.innerHTML='<div class="empty"><div class="empty-icon">🎆</div><div class="empty-title">No products found</div><p style="font-size:14px;color:var(--muted)">Try a different search or clear your filters.</p></div>';
     return;
   }
-  var overrides = JSON.parse(localStorage.getItem("wf_overrides")||'{"soldOut":[],"prices":{}}');
+  var overrides = window.DB_OVERRIDES || {soldOut:[], prices:{}};
   filtered.sort(function(a,b){
     var aOut = overrides.soldOut.indexOf(a.id)>-1 ? 1 : 0;
     var bOut = overrides.soldOut.indexOf(b.id)>-1 ? 1 : 0;
@@ -745,6 +749,26 @@ function render() {
   });
 }
 
+// Initialize Firebase and listen for real-time override changes
+var firebaseConfig = {
+  apiKey: "AIzaSyAHf8xIP1O00XIch16Ir1K9-dabHfxeC_s",
+  authDomain: "wildcat-fireworks.firebaseapp.com",
+  projectId: "wildcat-fireworks",
+  storageBucket: "wildcat-fireworks.firebasestorage.app",
+  messagingSenderId: "147263907616",
+  appId: "1:147263907616:web:89ca8e5260bf891bf59945"
+};
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+
+db.collection('catalog').doc('overrides').onSnapshot(function(doc) {
+  window.DB_OVERRIDES = doc.exists ? doc.data() : {soldOut:[], prices:{}};
+  render();
+}, function() {
+  window.DB_OVERRIDES = {soldOut:[], prices:{}};
+});
+
+// Load products from JSON if served via HTTP
 if (location.protocol !== 'file:') {
   fetch('public/products.json')
     .then(function(r){ return r.json(); })

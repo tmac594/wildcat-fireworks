@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 <meta name="theme-color" content="#1A6B1A"/>
 <title>Wildcat Admin</title>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -22,48 +24,41 @@
 }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg); color: var(--text);
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
+  min-height: 100vh; -webkit-font-smoothing: antialiased;
 }
 
-/* ── LOGIN ── */
+/* LOGIN */
 #loginScreen {
   display: flex; flex-direction: column; align-items: center;
   justify-content: center; min-height: 100vh;
   padding: 32px 20px; gap: 16px; text-align: center;
 }
-.login-logo { font-size: 48px; }
+.login-logo  { font-size: 48px; }
 .login-title { font-size: 22px; font-weight: 800; color: var(--gold); }
 .login-sub   { font-size: 13px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
 .pw-input {
   width: 100%; max-width: 300px; padding: 14px 16px;
   background: var(--surface); border: 1.5px solid var(--border);
   border-radius: 12px; color: var(--text); font-size: 16px;
-  font-family: inherit; outline: none; text-align: center;
-  letter-spacing: 0.2em;
+  font-family: inherit; outline: none; text-align: center; letter-spacing: 0.2em;
 }
 .pw-input:focus { border-color: var(--gold); }
 .btn-login {
   width: 100%; max-width: 300px; padding: 14px;
   background: var(--green); border: none; border-radius: 12px;
-  color: #fff; font-size: 15px; font-weight: 700;
-  cursor: pointer; font-family: inherit;
+  color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit;
 }
 .btn-login:active { opacity: 0.8; }
 .login-error { color: var(--red); font-size: 13px; min-height: 18px; }
 
-/* ── ADMIN PANEL ── */
+/* ADMIN PANEL */
 #adminPanel { display: none; }
-
 .admin-header {
   background: linear-gradient(90deg, var(--green) 0%, #0F3A0F 50%, var(--green) 100%);
-  padding: 14px 16px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 1px solid var(--golddk);
-  position: sticky; top: 0; z-index: 10;
+  padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--golddk); position: sticky; top: 0; z-index: 10;
 }
 .admin-header-title { font-size: 14px; font-weight: 800; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
 .btn-logout {
@@ -71,9 +66,7 @@ body {
   color: var(--text); font-size: 12px; font-weight: 600;
   padding: 6px 12px; border-radius: 8px; cursor: pointer; font-family: inherit;
 }
-
 .admin-body { padding: 16px 12px 80px; max-width: 600px; margin: 0 auto; }
-
 .admin-section-title {
   font-size: 10px; font-weight: 700; letter-spacing: 0.20em;
   text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
@@ -83,14 +76,10 @@ body {
 
 .admin-card {
   background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: 14px; padding: 14px; margin-bottom: 10px;
-  transition: border-color 0.15s;
+  border-radius: 14px; padding: 14px; margin-bottom: 10px; transition: border-color 0.15s;
 }
 .admin-card.is-sold-out { border-color: var(--red); opacity: 0.75; }
-
-.admin-card-top {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
-}
+.admin-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .admin-thumb {
   width: 52px; height: 52px; border-radius: 8px;
   object-fit: cover; background: var(--surf2); flex-shrink: 0;
@@ -105,14 +94,9 @@ body {
 .sold-out-badge {
   margin-left: auto; background: var(--red); color: #fff;
   font-size: 9px; font-weight: 800; letter-spacing: 0.1em;
-  text-transform: uppercase; padding: 3px 8px; border-radius: 4px;
-  flex-shrink: 0;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 4px; flex-shrink: 0;
 }
-
-.admin-card-controls {
-  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
-}
-
+.admin-card-controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .price-wrap {
   display: flex; align-items: center; gap: 6px;
   background: var(--surf2); border: 1.5px solid var(--border);
@@ -124,7 +108,6 @@ body {
   color: var(--gold); font-size: 18px; font-weight: 800;
   font-family: inherit; width: 80px;
 }
-
 .toggle-wrap {
   display: flex; align-items: center; gap: 8px;
   background: var(--surf2); border: 1.5px solid var(--border);
@@ -132,33 +115,19 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .toggle-wrap label { font-size: 13px; font-weight: 600; cursor: pointer; user-select: none; }
-/* Toggle switch */
-.toggle-switch {
-  position: relative; width: 40px; height: 22px; flex-shrink: 0;
-}
+.toggle-switch { position: relative; width: 40px; height: 22px; flex-shrink: 0; }
 .toggle-switch input { opacity: 0; width: 0; height: 0; }
 .toggle-track {
   position: absolute; inset: 0; border-radius: 11px;
-  background: var(--border); transition: background 0.2s;
-  cursor: pointer;
+  background: var(--border); transition: background 0.2s; cursor: pointer;
 }
 .toggle-track::before {
-  content: ''; position: absolute;
-  width: 16px; height: 16px; border-radius: 50%;
-  background: var(--muted); top: 3px; left: 3px;
-  transition: transform 0.2s, background 0.2s;
+  content: ''; position: absolute; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--muted); top: 3px; left: 3px; transition: transform 0.2s, background 0.2s;
 }
 .toggle-switch input:checked + .toggle-track { background: var(--red); }
-.toggle-switch input:checked + .toggle-track::before {
-  transform: translateX(18px); background: #fff;
-}
+.toggle-switch input:checked + .toggle-track::before { transform: translateX(18px); background: #fff; }
 
-.admin-save-note {
-  font-size: 11px; color: var(--muted); text-align: center;
-  margin-top: 6px;
-}
-
-/* Clear all */
 .btn-clear-all {
   width: 100%; padding: 13px; margin-top: 20px;
   background: none; border: 1.5px solid var(--border);
@@ -167,20 +136,21 @@ body {
 }
 .btn-clear-all:active { opacity: 0.7; }
 
-/* Save flash */
 .save-flash {
   position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
   background: var(--greenlt); color: #fff; font-size: 13px; font-weight: 700;
   padding: 10px 22px; border-radius: 20px; opacity: 0;
-  transition: opacity 0.3s; pointer-events: none; z-index: 100;
-  white-space: nowrap;
+  transition: opacity 0.3s; pointer-events: none; z-index: 100; white-space: nowrap;
 }
 .save-flash.show { opacity: 1; }
+.sync-status {
+  text-align: center; font-size: 11px; color: var(--muted);
+  padding: 6px; margin-bottom: 8px;
+}
 </style>
 </head>
 <body>
 
-<!-- ── LOGIN ── -->
 <div id="loginScreen">
   <div class="login-logo">🎆</div>
   <div class="login-title">Wildcat Fireworks</div>
@@ -190,13 +160,13 @@ body {
   <div class="login-error" id="loginError"></div>
 </div>
 
-<!-- ── ADMIN PANEL ── -->
 <div id="adminPanel">
   <div class="admin-header">
     <div class="admin-header-title">⚡ Admin Panel</div>
     <button class="btn-logout" onclick="logout()">Log Out</button>
   </div>
   <div class="admin-body">
+    <div class="sync-status" id="syncStatus">Connecting...</div>
     <div class="admin-section-title">Products</div>
     <div id="productList"></div>
     <button class="btn-clear-all" onclick="clearAll()">Reset All Overrides</button>
@@ -206,19 +176,24 @@ body {
 <div class="save-flash" id="saveFlash">Saved ✓</div>
 
 <script>
-// ── Change this password to whatever you want ──
 var PASSWORD = 'wildcat2026';
 
-var STORAGE_KEY = 'wf_overrides';
+// Firebase init
+var firebaseConfig = {
+  apiKey: "AIzaSyAHf8xIP1O00XIch16Ir1K9-dabHfxeC_s",
+  authDomain: "wildcat-fireworks.firebaseapp.com",
+  projectId: "wildcat-fireworks",
+  storageBucket: "wildcat-fireworks.firebasestorage.app",
+  messagingSenderId: "147263907616",
+  appId: "1:147263907616:web:89ca8e5260bf891bf59945"
+};
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+var OVERRIDES_REF = db.collection('catalog').doc('overrides');
 
-function getOverrides() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {soldOut:[],prices:{}}; }
-  catch(e) { return {soldOut:[],prices:{}}; }
-}
-function saveOverrides(o) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(o));
-  flashSaved();
-}
+var PRODUCTS = [];
+var currentOverrides = {soldOut:[], prices:{}};
+
 function flashSaved() {
   var el = document.getElementById('saveFlash');
   el.classList.add('show');
@@ -226,10 +201,9 @@ function flashSaved() {
   el._t = setTimeout(function(){ el.classList.remove('show'); }, 1800);
 }
 
-// ── Auth ──
+// Auth (device-local is intentional for login state)
 function login() {
-  var val = document.getElementById('pwInput').value;
-  if (val === PASSWORD) {
+  if (document.getElementById('pwInput').value === PASSWORD) {
     localStorage.setItem('wf_admin_auth', '1');
     showAdmin();
   } else {
@@ -249,13 +223,11 @@ function showAdmin() {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('adminPanel').style.display = 'block';
   loadProducts();
+  listenForOverrides();
 }
-
 if (localStorage.getItem('wf_admin_auth') === '1') showAdmin();
 
-// ── Products ──
-var PRODUCTS = [];
-
+// Load product list from JSON
 function loadProducts() {
   fetch('public/products.json')
     .then(function(r){ return r.json(); })
@@ -263,19 +235,29 @@ function loadProducts() {
     .catch(function(){ renderProducts(); });
 }
 
+// Real-time listener from Firestore
+function listenForOverrides() {
+  OVERRIDES_REF.onSnapshot(function(doc) {
+    currentOverrides = doc.exists ? doc.data() : {soldOut:[], prices:{}};
+    if (!currentOverrides.soldOut) currentOverrides.soldOut = [];
+    if (!currentOverrides.prices)  currentOverrides.prices  = {};
+    document.getElementById('syncStatus').textContent = '🟢 Synced';
+    renderProducts();
+  }, function(err) {
+    document.getElementById('syncStatus').textContent = '🔴 Offline — changes will sync when reconnected';
+  });
+}
+
 function renderProducts() {
-  var overrides = getOverrides();
   var list = document.getElementById('productList');
   list.innerHTML = '';
-
   if (!PRODUCTS.length) {
     list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:24px;">No products found.</p>';
     return;
   }
-
   PRODUCTS.forEach(function(p) {
-    var soldOut = overrides.soldOut.indexOf(p.id) > -1;
-    var price   = (overrides.prices[p.id] != null) ? overrides.prices[p.id] : p.price;
+    var soldOut = currentOverrides.soldOut.indexOf(p.id) > -1;
+    var price   = (currentOverrides.prices[p.id] != null) ? currentOverrides.prices[p.id] : p.price;
 
     var card = document.createElement('div');
     card.className = 'admin-card' + (soldOut ? ' is-sold-out' : '');
@@ -284,16 +266,13 @@ function renderProducts() {
     var thumbHtml = p.thumbnailUrl
       ? '<img class="admin-thumb" src="' + p.thumbnailUrl + '" alt="' + p.name + '">'
       : '<div class="admin-thumb-placeholder">🎆</div>';
-
     var badgeHtml = soldOut ? '<div class="sold-out-badge">Sold Out</div>' : '';
 
     card.innerHTML =
       '<div class="admin-card-top">' +
         thumbHtml +
-        '<div>' +
-          '<div class="admin-card-name">' + p.name + '</div>' +
-          '<div class="admin-card-cat">' + p.category + '</div>' +
-        '</div>' +
+        '<div><div class="admin-card-name">' + p.name + '</div>' +
+        '<div class="admin-card-cat">$' + price.toFixed(2) + ' · ' + p.category + '</div></div>' +
         badgeHtml +
       '</div>' +
       '<div class="admin-card-controls">' +
@@ -305,7 +284,7 @@ function renderProducts() {
         '<div class="toggle-wrap" onclick="toggleSoldOut(\'' + p.id + '\')">' +
           '<label>Sold Out</label>' +
           '<div class="toggle-switch">' +
-            '<input type="checkbox" id="toggle-' + p.id + '"' + (soldOut ? ' checked' : '') + ' readonly>' +
+            '<input type="checkbox"' + (soldOut ? ' checked' : '') + ' readonly>' +
             '<div class="toggle-track"></div>' +
           '</div>' +
         '</div>' +
@@ -318,28 +297,22 @@ function renderProducts() {
 function updatePrice(id, val) {
   var price = parseFloat(val);
   if (isNaN(price) || price < 0) return;
-  var o = getOverrides();
-  o.prices[id] = price;
-  saveOverrides(o);
+  var updated = JSON.parse(JSON.stringify(currentOverrides));
+  updated.prices[id] = price;
+  OVERRIDES_REF.set(updated).then(flashSaved);
 }
 
 function toggleSoldOut(id) {
-  var o = getOverrides();
-  var idx = o.soldOut.indexOf(id);
-  if (idx > -1) {
-    o.soldOut.splice(idx, 1);
-  } else {
-    o.soldOut.push(id);
-  }
-  saveOverrides(o);
-  renderProducts(); // re-render to update styling
+  var updated = JSON.parse(JSON.stringify(currentOverrides));
+  var idx = updated.soldOut.indexOf(id);
+  if (idx > -1) { updated.soldOut.splice(idx, 1); }
+  else          { updated.soldOut.push(id); }
+  OVERRIDES_REF.set(updated).then(flashSaved);
 }
 
 function clearAll() {
   if (!confirm('Reset all sold-out flags and price changes?')) return;
-  localStorage.removeItem(STORAGE_KEY);
-  renderProducts();
-  flashSaved();
+  OVERRIDES_REF.set({soldOut:[], prices:{}}).then(flashSaved);
 }
 </script>
 </body>
