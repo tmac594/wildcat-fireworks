@@ -458,5 +458,35 @@
     "videoUrl": "/public/videos/dragon-assorted-artillery-shells.mp4",
     "thumbnailUrl": "/public/images/assorted-dragon-artillery-shells.jpg",
     "tags": ["Colorful"]
+  },
+  {
+    "id": "p49",
+    "name": "Dragon Artillery Shell - Crackling",
+    "price": 25.0,
+    "category": "Canister Shells",
+    "description": "Six-shot reloadable shell kit with colorful flower-style bursts and crackling finishes in yellow, blue, red, green, silver, and mixed-color effects. Each shot pops with a satisfying crackle.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/dragon-crackling-artillery-shells.jpg",
+    "tags": ["Colorful"]
+  },
+  {
+    "id": "p50",
+    "name": "Festival Ball - 6 Assorted Shells",
+    "price": 25.0,
+    "category": "Canister Shells",
+    "description": "Six assorted festival-ball shells with a reloadable launching tube included. A classic entry-level shell kit with colorful aerial bursts — simple to use and great for any backyard show.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/festival-ball-artillery shells.jpg",
+    "tags": ["Colorful"]
+  },
+  {
+    "id": "p51",
+    "name": "Premium 5 Inch Canister Shells",
+    "price": 100.0,
+    "category": "Canister Shells",
+    "description": "TNT's premium 5-inch shell kit loaded with crackling, whistling, and sparkling star bursts in a wide variety of colors. Bigger, louder, and more impressive than a standard shell kit — a serious upgrade.",
+    "videoUrl": "/public/videos/premium-5-inch.mp4",
+    "thumbnailUrl": "/public/images/premium-5-inch.png",
+    "tags": ["Colorful", "Loud"]
   }
 ]
