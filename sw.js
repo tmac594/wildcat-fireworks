@@ -1,4 +1,4 @@
-const CACHE = 'wildcat-v6';
+const CACHE = 'wildcat-v7';
 
 // Network-first URLs: always fetch fresh, only use cache when offline
 const NETWORK_FIRST = ['/public/products.json'];
@@ -37,6 +37,12 @@ const ASSETS = [
   '/public/images/seal-the-deal.png',
   '/public/images/military-paratrooper.png',
   '/public/images/naughty-gnomes.png',
+  '/public/images/3-min.png',
+  '/public/images/sky-prince.jpg',
+  '/public/images/sky-princess.jpg',
+  '/public/images/Dino-landing.jpg',
+  '/public/images/Super-dragon.png',
+  '/public/images/go-bananas.jpg',
   // Videos
   '/public/videos/one-minute-revelry.mp4',
   '/public/videos/firefly.mp4',
@@ -63,6 +69,12 @@ const ASSETS = [
   '/public/videos/seal-the-deal.mp4',
   '/public/videos/military-paratrooper.mp4',
   '/public/videos/naughty-gnome.mp4',
+  '/public/videos/3-min.mp4',
+  '/public/videos/sky-prince.mp4',
+  '/public/videos/sky-princess.mp4',
+  '/public/videos/Dino-landing.mp4',
+  '/public/videos/super-dragon.mp4',
+  '/public/videos/go-bananas.mp4',
 ];
 
 self.addEventListener('install', e => {
