@@ -1,4 +1,4 @@
-const CACHE = 'wildcat-v4';
+const CACHE = 'wildcat-v5';
 
 const ASSETS = [
   '/',
