@@ -7,7 +7,7 @@
     "description": "30 aerial shots that build to a dazzling finale — colorful bursts rise into drooping golden waterfall effects, then finish with a sparkling crown of red and silver. A great starter show that packs a real punch.",
     "videoUrl": "/public/videos/one-minute-revelry.mp4",
     "thumbnailUrl": "/public/images/one-minute-revelry.jpg",
-    "tags": ["Palm Effect", "Glitter"]
+    "tags": ["Waterfall Burst", "Glitter"]
   },
   {
     "id": "p11",
@@ -57,17 +57,17 @@
     "description": "24 rapid-fire shots that explode into massive drooping golden showers — like giant weeping willow trees in the sky — each one raining brilliant blue stars as it falls. Fast, beautiful, and always a crowd-pleaser.",
     "videoUrl": "/public/videos/willow-explosion.mp4",
     "thumbnailUrl": "/public/images/willow-explosion.png",
-    "tags": ["Willow Effect", "Blue Stars", "Fast-Paced"]
+    "tags": ["Waterfall Burst", "Blue Stars", "Fast-Paced"]
   },
   {
     "id": "p07",
     "name": "2 Minutes Extravaganza",
     "price": 85.0,
     "category": "500g Cakes",
-    "description": "63 shots and nearly 2 full minutes of non-stop aerial action — colorful bursts, golden glitter showers, crackling rain effects, and a rapid-fire finale to close it out. Our best bang for your buck.",
+    "description": "63 shots and nearly 2 full minutes of non-stop aerial action — colorful bursts, golden glitter showers, crackling rain effects, and a rapid-fire finale to close it out.",
     "videoUrl": "/public/videos/2-minutes-extravaganza.mp4",
     "thumbnailUrl": "/public/images/2-minute-exxtravaganza.png",
-    "tags": ["Long Show", "Best Value"]
+    "tags": ["Long Show"]
   },
   {
     "id": "p04",
@@ -107,7 +107,7 @@
     "description": "9 sky-filling shots that launch massive golden sparkle bursts high into the air, each one raining glittering pink and red sparks from the center. Big, booming, and built to close the show.",
     "videoUrl": "/public/videos/whacky-tobacky.mp4",
     "thumbnailUrl": "/public/images/whacky-tobacky.png",
-    "tags": ["Finale", "Gold Brocade", "Glitter"]
+    "tags": ["Finale", "Gold Sparkle", "Glitter"]
   },
   {
     "id": "p02",
@@ -127,7 +127,7 @@
     "description": "9 massive shots that explode into enormous rings of fire — golden sparkling rings, glittering rings, and bold color rings with a bright red center. Layered, dramatic, and impossible to ignore.",
     "videoUrl": "/public/videos/double-down.mp4",
     "thumbnailUrl": "/public/images/double-down.png",
-    "tags": ["Finale", "Palm Effect", "Gold Brocade"]
+    "tags": ["Finale", "Gold Sparkle"]
   },
   {
     "id": "p05",
@@ -137,7 +137,47 @@
     "description": "Our biggest show in a single box — 204 shots with sweeping star formations, crackling comet trails, colorful bursts, and whistling rockets that build for nearly 3 minutes before detonating in a thundering silver finale.",
     "videoUrl": "/public/videos/midnight.mp4",
     "thumbnailUrl": "/public/images/midnight.jpg",
-    "tags": ["Finale", "Long Show", "Palm Effect"]
+    "tags": ["Finale", "Long Show"]
+  },
+  {
+    "id": "p53",
+    "name": "Hooch",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 massive finale-rack shots packed with vivid color-changing stars that shift mid-air, then close out with a wave of drooping golden crackling showers. Big, beautiful, and built to end the night.",
+    "videoUrl": "/public/videos/hooch.mp4",
+    "thumbnailUrl": "/public/images/hooch.png",
+    "tags": ["Finale", "Color Changing"]
+  },
+  {
+    "id": "p54",
+    "name": "Monstrous Brocade Ring",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 massive finale-rack shots that explode into enormous sparkling rings, each one split with stunning two-tone color-changing star bursts. Dramatic, layered, and impossible to miss.",
+    "videoUrl": "/public/videos/monstrous-brocade-ring.mp4",
+    "thumbnailUrl": "/public/images/monstrous-brocade-ring.png",
+    "tags": ["Finale", "Gold Sparkle", "Color Changing"]
+  },
+  {
+    "id": "p55",
+    "name": "Bonus Night",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 massive rack shots bursting with huge sparkling crown explosions, colorful falling-leaf effects drifting down from the sky, and red, silver, and green glitter finishes. Rich, layered, and showstopping.",
+    "videoUrl": "/public/videos/bonus-night.mp4",
+    "thumbnailUrl": "/public/images/bonus-night.jpg",
+    "tags": ["Finale", "Gold Sparkle", "Glitter"]
+  },
+  {
+    "id": "p56",
+    "name": "Neon Jellyfish",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 stunning 3-inch rack shots that bloom into jellyfish-shaped bursts in peach, green, and blue — each one opening into colorful rings with long golden trailing tentacles. Truly unlike anything else in the sky.",
+    "videoUrl": "/public/videos/neon-jellyfish.mp4",
+    "thumbnailUrl": "/public/images/neon-jellyfish.png",
+    "tags": ["Finale", "Color Changing"]
   },
   {
     "id": "p17",
@@ -157,7 +197,7 @@
     "description": "24 powerful 5-inch reloadable shells that blast high into the sky with massive colorful explosions and earth-shaking booms. Load one at a time for maximum impact every single shot.",
     "videoUrl": "/public/videos/monster-5-inch-cannister.mp4",
     "thumbnailUrl": "/public/images/monster-5-inch-cannister.png",
-    "tags": ["Loud"]
+    "tags": ["Colorful", "Loud"]
   },
   {
     "id": "p19",
@@ -167,277 +207,27 @@
     "description": "24 reloadable shells with massive high-altitude explosions and a bold patriotic look. Hard-hitting bursts that fill the sky one powerful shot at a time — perfect alongside a cake show.",
     "videoUrl": "/public/videos/ameri-cannons.mp4",
     "thumbnailUrl": "/public/images/ameri-cannons.png",
-    "tags": ["Loud"]
+    "tags": ["Colorful", "Loud"]
   },
   {
-    "id": "p20",
-    "name": "Super Sized",
-    "price": 65.0,
-    "category": "Fountains",
-    "description": "A big ground fountain that pours out golden sparks, colored stars, and dense crackling effects for a dazzling close-up show. Great placed in front of aerial items to fill the whole scene.",
-    "videoUrl": "/public/videos/super-sized.mp4",
-    "thumbnailUrl": "/public/images/super-sized.jpg",
-    "tags": ["Gold Brocade", "Glitter"]
+    "id": "p51",
+    "name": "Premium 5 Inch Canister Shells",
+    "price": 100.0,
+    "category": "Canister Shells",
+    "description": "TNT's premium 5-inch shell kit loaded with crackling, whistling, and sparkling star bursts in a wide variety of colors. Bigger, louder, and more impressive than a standard shell kit — a serious upgrade.",
+    "videoUrl": "/public/videos/premium-5-inch.mp4",
+    "thumbnailUrl": "/public/images/premium-5-inch.png",
+    "tags": ["Colorful", "Loud"]
   },
   {
-    "id": "p27",
-    "name": "Seal the Deal",
-    "price": 30.0,
-    "category": "Fountains",
-    "description": "Ground fountain that sprays silver crackles, red and blue stars, and cascading gold and blue sparkle showers. Beautiful up close and a great addition alongside any show.",
-    "videoUrl": "/public/videos/seal-the-deal.mp4",
-    "thumbnailUrl": "/public/images/seal-the-deal.png",
+    "id": "p52",
+    "name": "Ring of Honor",
+    "price": 60.0,
+    "category": "Canister Shells",
+    "description": "Six powerful 5-inch reloadable shells that explode into stunning ring-shaped bursts high in the sky. A dramatic, one-of-a-kind effect that looks unlike anything else in a show.",
+    "videoUrl": "/public/videos/ring-of-honor.mp4",
+    "thumbnailUrl": "/public/images/ring-of-honor.png",
     "tags": ["Colorful"]
-  },
-  {
-    "id": "p30",
-    "name": "3 Minute",
-    "price": 17.5,
-    "category": "Fountains",
-    "description": "A full 3 minutes of sparkling ground fountain effects — cycling through silver, red, white, green, and blue with crackling bursts throughout. Incredible value for how long it lasts.",
-    "videoUrl": "/public/videos/3-min.mp4",
-    "thumbnailUrl": "/public/images/3-min.png",
-    "tags": ["Long Show"]
-  },
-  {
-    "id": "p21",
-    "name": "Snake Pit",
-    "price": 25.0,
-    "category": "200g Cakes",
-    "description": "12 aerial shots that launch with crackling trails and burst into purple, aqua-blue, and silver explosions, finishing with a rapid wave of red glitter and crackle. Great mid-range filler for any show.",
-    "videoUrl": "/public/videos/snake-pit.mp4",
-    "thumbnailUrl": "/public/images/snake-pit.png",
-    "tags": ["Fast-Paced", "Color Changing"]
-  },
-  {
-    "id": "p22",
-    "name": "Pirate Captain",
-    "price": 25.0,
-    "category": "200g Cakes",
-    "description": "21 aerial shots bursting with gold, silver, and red star effects, bright color bursts, and shimmering trails. A fun variety of effects in one box — a great crowd-pleaser at any price.",
-    "videoUrl": "/public/videos/pirate-captain.mp4",
-    "thumbnailUrl": "/public/images/pirate-captain.png",
-    "tags": ["Palm Effect", "Color Changing"]
-  },
-  {
-    "id": "p23",
-    "name": "Wild One",
-    "price": 25.0,
-    "category": "200g Cakes",
-    "description": "9 shots that launch with crackling blue trails and burst into alternating crackle and color-flashing star explosions. Bold, fast, and a lot of fun for the price.",
-    "videoUrl": "/public/videos/wild-one.mp4",
-    "thumbnailUrl": "/public/images/wild-one.jpg",
-    "tags": ["Fast-Paced"]
-  },
-  {
-    "id": "p24",
-    "name": "Hulking Hurler",
-    "price": 20.0,
-    "category": "200g Cakes",
-    "description": "16 big multicolor aerial bursts that punch way above their weight — impressive effects that look and feel like a much bigger firework. One of the best values on the table.",
-    "videoUrl": "/public/videos/hulking-hurler.mp4",
-    "thumbnailUrl": "/public/images/hulking-hurler.png",
-    "tags": ["Colorful", "Best Value"]
-  },
-  {
-    "id": "p25",
-    "name": "Neon Show",
-    "price": 20.0,
-    "category": "200g Cakes",
-    "description": "16 brilliant aerial shots that burst into bright silver flower explosions and transition through red, green, sky blue, yellow, and purple stars with silver glitter. Eye-catching color variety in every shot.",
-    "videoUrl": "/public/videos/neon-show.mp4",
-    "thumbnailUrl": "/public/images/neon-show.jpg",
-    "tags": ["Colorful", "Glitter"]
-  },
-  {
-    "id": "p26",
-    "name": "Poker Party",
-    "price": 20.0,
-    "category": "200g Cakes",
-    "description": "16 aerial shots with sparkling golden crowns, drooping golden showers, colorful shooting tails, and flashing white strobe effects. A fun mix of effects that keeps everyone watching.",
-    "videoUrl": null,
-    "thumbnailUrl": "/public/images/poker-party.png",
-    "tags": ["Color Changing", "Gold Brocade"]
-  },
-  {
-    "id": "p28",
-    "name": "Military Paratrooper",
-    "price": 25.0,
-    "category": "Novelties",
-    "description": "Shoots a toy soldier high into the air on a crackling trail, then watch it float back down on a parachute. The soldier has movable head, arms, and legs — kids absolutely love it.",
-    "videoUrl": "/public/videos/military-paratrooper.mp4",
-    "thumbnailUrl": "/public/images/military-paratrooper.png",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p29",
-    "name": "Naughty Gnomes",
-    "price": 7.5,
-    "category": "Novelties",
-    "description": "A cone-shaped ground fountain with bold sparkling action, a whistling effect, and a crackling finish. Great budget add-on and the fun packaging makes it a crowd favorite with kids.",
-    "videoUrl": "/public/videos/naughty-gnome.mp4",
-    "thumbnailUrl": "/public/images/naughty-gnomes.png",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p31",
-    "name": "Sky Prince",
-    "price": 25.0,
-    "category": "Novelties",
-    "description": "Shoots a prince figure high into the air then watch it float back down on a colorful parachute. A fun novelty the whole family enjoys — great for kids to pick out themselves.",
-    "videoUrl": "/public/videos/sky-prince.mp4",
-    "thumbnailUrl": "/public/images/sky-prince.jpg",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p32",
-    "name": "Sky Princess",
-    "price": 25.0,
-    "category": "Novelties",
-    "description": "Shoots a princess figure high into the air then watch it float back down on a colorful parachute. A fun novelty the whole family enjoys — great for kids to pick out themselves.",
-    "videoUrl": "/public/videos/sky-princess.mp4",
-    "thumbnailUrl": "/public/images/sky-princess.jpg",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p33",
-    "name": "Dino Landing",
-    "price": 12.0,
-    "category": "Novelties",
-    "description": "A daytime novelty that shoots up and floats back down on a parachute with a colorful smoke trail and a small dinosaur figure attached. Perfect for kids and a great daytime activity.",
-    "videoUrl": "/public/videos/Dino-landing.mp4",
-    "thumbnailUrl": "/public/images/Dino-landing.jpg",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p34",
-    "name": "Super Dragon",
-    "price": 10.0,
-    "category": "Novelties",
-    "description": "Dragon-themed ground fountain with colorful sparkling sprays, bright flashing effects, and vivid star bursts. A fun, safe, family-friendly pick that kids love to watch up close.",
-    "videoUrl": "/public/videos/super-dragon.mp4",
-    "thumbnailUrl": "/public/images/Super-dragon.png",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p35",
-    "name": "Go Bananas",
-    "price": 10.0,
-    "category": "Novelties",
-    "description": "Monkey-themed fountain that starts with a bright red flame, erupts into colorful flower sparks and glitter, then finishes with cascading silver rain and a loud crackling finale. Fun, loud, and great for the price.",
-    "videoUrl": "/public/videos/go-bananas.mp4",
-    "thumbnailUrl": "/public/images/go-bananas.jpg",
-    "tags": ["Family Friendly", "Glitter"]
-  },
-  {
-    "id": "p36",
-    "name": "TNT Backpack Assortment",
-    "price": 30.0,
-    "category": "Novelties",
-    "description": "A grab-and-go backpack packed with an assorted mix of TNT ground items and novelties. Perfect for families who want a variety of fun without picking individual items — everything you need in one bag.",
-    "videoUrl": null,
-    "thumbnailUrl": "/public/images/tnt-backpack-assortment.png",
-    "tags": ["Family Friendly", "Best Value"]
-  },
-  {
-    "id": "p37",
-    "name": "Sword Master",
-    "price": 20.0,
-    "category": "Novelties",
-    "description": "A sword-shaped novelty fountain that shoots sparkling effects right from the tip. Bold, dramatic, and a crowd favorite — a fun prop that doubles as a real firework.",
-    "videoUrl": "/public/videos/sword-master.mp4",
-    "thumbnailUrl": "/public/images/sword-master.png",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p38",
-    "name": "2nd Amendment",
-    "price": 20.0,
-    "category": "Fountains",
-    "description": "A patriotic-themed ground fountain from Top Gun Fireworks that bursts with red, white, and blue sparkling effects, silver crackling showers, and a bold star-filled finale. A great salute to American pride.",
-    "videoUrl": "/public/videos/2nd-amendment.mp4",
-    "thumbnailUrl": "/public/images/2nd-amendment.jpg",
-    "tags": ["Colorful"]
-  },
-  {
-    "id": "p39",
-    "name": "Ladybug",
-    "price": 6.50,
-    "category": "Novelties",
-    "description": "A ladybug-themed spinner that spins wildly on the ground with a whistling effect, then launches itself into the air and bursts into red or green stars. Inexpensive, surprising, and always gets a reaction.",
-    "videoUrl": "/public/videos/lady-bugs.mp4",
-    "thumbnailUrl": "/public/images/lady-bug.png",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p40",
-    "name": "Danger Zone",
-    "price": 6.50,
-    "category": "Novelties",
-    "description": "Two-pack of handheld smoke sticks — one red and one orange — that pour out bold, vivid color smoke. Perfect for daytime celebrations, photos, and parties.",
-    "videoUrl": "/public/videos/danger-zone.mp4",
-    "thumbnailUrl": "/public/images/danger-zone.png",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p41",
-    "name": "M-45 Tank",
-    "price": 10.0,
-    "category": "Novelties",
-    "description": "A classic ground-based novelty by Brothers Pyrotechnics that propels itself back and forth along the ground, letting out a loud 2-stage whistle as it moves, then finishes with a final bang. Kids love chasing it.",
-    "videoUrl": "/public/videos/m-45.mp4",
-    "thumbnailUrl": "/public/images/m-45.jpg",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p42",
-    "name": "Mighty Max Rocket",
-    "price": 15.0,
-    "category": "Novelties",
-    "description": "Four-pack of 32-inch high-flying stick rockets that leave a dazzling trail and break high in the sky.",
-    "videoUrl": null,
-    "thumbnailUrl": "/public/images/might-max-rocket.jpg",
-    "tags": ["Family Friendly"]
-  },
-  {
-    "id": "p43",
-    "name": "Red Devil 80/16 Firecrackers",
-    "price": 20.0,
-    "category": "Novelties",
-    "description": "Red Devil super firecrackers built for loud, fast crackling reports. A classic firecracker pack for anyone who loves noise — bold, sharp, and satisfying.",
-    "videoUrl": null,
-    "thumbnailUrl": "/public/images/red-devil-80-16.png",
-    "tags": ["Loud"]
-  },
-  {
-    "id": "p44",
-    "name": "Mad Dog Roll of 1000",
-    "price": 15.0,
-    "category": "Novelties",
-    "description": "A full roll of 1,000 connected firecrackers that unleash a long, rapid chain of sharp crackling reports. Perfect for making a big entrance or closing out a show with a bang.",
-    "videoUrl": null,
-    "thumbnailUrl": "/public/images/mad-dog-roll-of-1000.png",
-    "tags": ["Loud"]
-  },
-  {
-    "id": "p45",
-    "name": "Ground Blasters",
-    "price": 5.0,
-    "category": "Novelties",
-    "description": "A box of single crackers that each pack a loud punch. TNT-made, waterproof, and built for noise — a great budget pick for anyone who loves a big bang.",
-    "videoUrl": null,
-    "thumbnailUrl": "/public/images/ground-blasters-100pc.png",
-    "tags": ["Loud", "Best Value"]
-  },
-  {
-    "id": "p46",
-    "name": "Fire In Motion",
-    "price": 25.0,
-    "category": "Novelties",
-    "description": "140 colorful aerial shots fired from a ground-spiked tube — one after another in a continuous stream of color. A strong value add-on that keeps the sky busy throughout your show.",
-    "videoUrl": "/public/videos/fire-in-motion.mp4",
-    "thumbnailUrl": "/public/images/fire-in-motion.jpg",
-    "tags": ["Colorful", "Best Value"]
   },
   {
     "id": "p47",
@@ -480,74 +270,284 @@
     "tags": ["Colorful"]
   },
   {
-    "id": "p51",
-    "name": "Premium 5 Inch Canister Shells",
-    "price": 100.0,
-    "category": "Canister Shells",
-    "description": "TNT's premium 5-inch shell kit loaded with crackling, whistling, and sparkling star bursts in a wide variety of colors. Bigger, louder, and more impressive than a standard shell kit — a serious upgrade.",
-    "videoUrl": "/public/videos/premium-5-inch.mp4",
-    "thumbnailUrl": "/public/images/premium-5-inch.png",
-    "tags": ["Colorful", "Loud"]
+    "id": "p20",
+    "name": "Super Sized",
+    "price": 65.0,
+    "category": "Fountains",
+    "description": "A big ground fountain that pours out golden sparks, colored stars, and dense crackling effects for a dazzling close-up show. Great placed in front of aerial items to fill the whole scene.",
+    "videoUrl": "/public/videos/super-sized.mp4",
+    "thumbnailUrl": "/public/images/super-sized.jpg",
+    "tags": ["Gold Sparkle", "Glitter"]
   },
   {
-    "id": "p52",
-    "name": "Ring of Honor",
-    "price": 60.0,
-    "category": "Canister Shells",
-    "description": "Six powerful 5-inch reloadable shells that explode into stunning ring-shaped bursts high in the sky. A dramatic, one-of-a-kind effect that looks unlike anything else in a show.",
-    "videoUrl": "/public/videos/ring-of-honor.mp4",
-    "thumbnailUrl": "/public/images/ring-of-honor.png",
+    "id": "p27",
+    "name": "Seal the Deal",
+    "price": 30.0,
+    "category": "Fountains",
+    "description": "Ground fountain that sprays silver crackles, red and blue stars, and cascading gold and blue sparkle showers. Beautiful up close and a great addition alongside any show.",
+    "videoUrl": "/public/videos/seal-the-deal.mp4",
+    "thumbnailUrl": "/public/images/seal-the-deal.png",
     "tags": ["Colorful"]
   },
   {
-    "id": "p53",
-    "name": "Hooch",
-    "price": 200.0,
-    "category": "500g Cakes",
-    "description": "9 massive finale-rack shots packed with vivid color-changing stars that shift mid-air, then close out with a wave of drooping golden crackling showers. Big, beautiful, and built to end the night.",
-    "videoUrl": "/public/videos/hooch.mp4",
-    "thumbnailUrl": "/public/images/hooch.png",
-    "tags": ["Finale", "Color Changing"]
+    "id": "p38",
+    "name": "2nd Amendment",
+    "price": 20.0,
+    "category": "Fountains",
+    "description": "A patriotic-themed ground fountain from Top Gun Fireworks that bursts with red, white, and blue sparkling effects, silver crackling showers, and a bold star-filled finale. A great salute to American pride.",
+    "videoUrl": "/public/videos/2nd-amendment.mp4",
+    "thumbnailUrl": "/public/images/2nd-amendment.jpg",
+    "tags": ["Colorful"]
   },
   {
-    "id": "p54",
-    "name": "Monstrous Brocade Ring",
-    "price": 200.0,
-    "category": "500g Cakes",
-    "description": "9 massive finale-rack shots that explode into enormous sparkling brocade rings, each one split with stunning two-tone color-changing star bursts. Dramatic, layered, and impossible to miss.",
-    "videoUrl": "/public/videos/monstrous-brocade-ring.mp4",
-    "thumbnailUrl": "/public/images/monstrous-brocade-ring.png",
-    "tags": ["Finale", "Gold Brocade", "Color Changing"]
+    "id": "p30",
+    "name": "3 Minute",
+    "price": 17.5,
+    "category": "Fountains",
+    "description": "A full 3 minutes of sparkling ground fountain effects — cycling through silver, red, white, green, and blue with crackling bursts throughout. Incredible value for how long it lasts.",
+    "videoUrl": "/public/videos/3-min.mp4",
+    "thumbnailUrl": "/public/images/3-min.png",
+    "tags": ["Long Show"]
   },
   {
-    "id": "p55",
-    "name": "Bonus Night",
-    "price": 200.0,
-    "category": "500g Cakes",
-    "description": "9 massive rack shots bursting with huge sparkling crown explosions, colorful falling-leaf effects drifting down from the sky, and red, silver, and green glitter finishes. Rich, layered, and showstopping.",
-    "videoUrl": "/public/videos/bonus-night.mp4",
-    "thumbnailUrl": "/public/images/bonus-night.jpg",
-    "tags": ["Finale", "Gold Brocade", "Glitter"]
+    "id": "p21",
+    "name": "Snake Pit",
+    "price": 25.0,
+    "category": "200g Cakes",
+    "description": "12 aerial shots that launch with crackling trails and burst into purple, aqua-blue, and silver explosions, finishing with a rapid wave of red glitter and crackle. Great mid-range filler for any show.",
+    "videoUrl": "/public/videos/snake-pit.mp4",
+    "thumbnailUrl": "/public/images/snake-pit.png",
+    "tags": ["Fast-Paced", "Color Changing"]
   },
   {
-    "id": "p56",
-    "name": "Neon Jellyfish",
-    "price": 200.0,
-    "category": "500g Cakes",
-    "description": "9 stunning 3-inch rack shots that bloom into jellyfish-shaped bursts in peach, green, and blue — each one opening into colorful rings with long golden trailing tentacles. Truly unlike anything else in the sky.",
-    "videoUrl": "/public/videos/neon-jellyfish.mp4",
-    "thumbnailUrl": "/public/images/neon-jellyfish.png",
-    "tags": ["Finale", "Color Changing"]
+    "id": "p22",
+    "name": "Pirate Captain",
+    "price": 25.0,
+    "category": "200g Cakes",
+    "description": "21 aerial shots bursting with gold, silver, and red star effects, bright color bursts, and shimmering trails. A fun variety of effects in one box — a great crowd-pleaser at any price.",
+    "videoUrl": "/public/videos/pirate-captain.mp4",
+    "thumbnailUrl": "/public/images/pirate-captain.png",
+    "tags": ["Color Changing"]
+  },
+  {
+    "id": "p23",
+    "name": "Wild One",
+    "price": 25.0,
+    "category": "200g Cakes",
+    "description": "9 shots that launch with crackling blue trails and burst into alternating crackle and color-flashing star explosions. Bold, fast, and a lot of fun for the price.",
+    "videoUrl": "/public/videos/wild-one.mp4",
+    "thumbnailUrl": "/public/images/wild-one.jpg",
+    "tags": ["Fast-Paced", "Color Changing"]
+  },
+  {
+    "id": "p24",
+    "name": "Hulking Hurler",
+    "price": 20.0,
+    "category": "200g Cakes",
+    "description": "16 big multicolor aerial bursts that punch way above their weight — impressive effects that look and feel like a much bigger firework.",
+    "videoUrl": "/public/videos/hulking-hurler.mp4",
+    "thumbnailUrl": "/public/images/hulking-hurler.png",
+    "tags": ["Colorful"]
+  },
+  {
+    "id": "p25",
+    "name": "Neon Show",
+    "price": 20.0,
+    "category": "200g Cakes",
+    "description": "16 brilliant aerial shots that burst into bright silver flower explosions and transition through red, green, sky blue, yellow, and purple stars with silver glitter. Eye-catching color variety in every shot.",
+    "videoUrl": "/public/videos/neon-show.mp4",
+    "thumbnailUrl": "/public/images/neon-show.jpg",
+    "tags": ["Colorful", "Glitter"]
+  },
+  {
+    "id": "p26",
+    "name": "Poker Party",
+    "price": 20.0,
+    "category": "200g Cakes",
+    "description": "16 aerial shots with sparkling golden crowns, drooping golden showers, colorful shooting tails, and flashing white strobe effects. A fun mix of effects that keeps everyone watching.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/poker-party.png",
+    "tags": ["Color Changing", "Gold Sparkle"]
+  },
+  {
+    "id": "p46",
+    "name": "Fire In Motion",
+    "price": 25.0,
+    "category": "Novelties",
+    "description": "140 colorful aerial shots fired from a ground-spiked tube — one after another in a continuous stream of color. A strong add-on that keeps the sky busy throughout your show.",
+    "videoUrl": "/public/videos/fire-in-motion.mp4",
+    "thumbnailUrl": "/public/images/fire-in-motion.jpg",
+    "tags": ["Colorful", "Long Show"]
+  },
+  {
+    "id": "p28",
+    "name": "Military Paratrooper",
+    "price": 25.0,
+    "category": "Novelties",
+    "description": "Shoots a toy soldier high into the air on a crackling trail, then watch it float back down on a parachute. The soldier has movable head, arms, and legs — kids absolutely love it.",
+    "videoUrl": "/public/videos/military-paratrooper.mp4",
+    "thumbnailUrl": "/public/images/military-paratrooper.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p31",
+    "name": "Sky Prince",
+    "price": 25.0,
+    "category": "Novelties",
+    "description": "Shoots a prince figure high into the air then watch it float back down on a colorful parachute. A fun novelty the whole family enjoys — great for kids to pick out themselves.",
+    "videoUrl": "/public/videos/sky-prince.mp4",
+    "thumbnailUrl": "/public/images/sky-prince.jpg",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p32",
+    "name": "Sky Princess",
+    "price": 25.0,
+    "category": "Novelties",
+    "description": "Shoots a princess figure high into the air then watch it float back down on a colorful parachute. A fun novelty the whole family enjoys — great for kids to pick out themselves.",
+    "videoUrl": "/public/videos/sky-princess.mp4",
+    "thumbnailUrl": "/public/images/sky-princess.jpg",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p36",
+    "name": "TNT Backpack Assortment",
+    "price": 30.0,
+    "category": "Novelties",
+    "description": "A grab-and-go backpack packed with an assorted mix of TNT ground items and novelties. Perfect for families who want a variety of fun without picking individual items — everything you need in one bag.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/tnt-backpack-assortment.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p37",
+    "name": "Sword Master",
+    "price": 20.0,
+    "category": "Novelties",
+    "description": "A sword-shaped novelty fountain that shoots sparkling effects right from the tip. Bold, dramatic, and a crowd favorite — a fun prop that doubles as a real firework.",
+    "videoUrl": "/public/videos/sword-master.mp4",
+    "thumbnailUrl": "/public/images/sword-master.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p39",
+    "name": "Ladybug",
+    "price": 6.50,
+    "category": "Novelties",
+    "description": "A ladybug-themed spinner that spins wildly on the ground with a whistling effect, then launches itself into the air and bursts into red or green stars. Inexpensive, surprising, and always gets a reaction.",
+    "videoUrl": "/public/videos/lady-bugs.mp4",
+    "thumbnailUrl": "/public/images/lady-bug.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p40",
+    "name": "Danger Zone",
+    "price": 6.50,
+    "category": "Novelties",
+    "description": "Two-pack of handheld smoke sticks — one red and one orange — that pour out bold, vivid color smoke. Perfect for daytime celebrations, photos, and parties.",
+    "videoUrl": "/public/videos/danger-zone.mp4",
+    "thumbnailUrl": "/public/images/danger-zone.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p41",
+    "name": "M-45 Tank",
+    "price": 10.0,
+    "category": "Novelties",
+    "description": "A classic ground-based novelty that propels itself back and forth along the ground, letting out a loud 2-stage whistle as it moves, then finishes with a final bang. Kids love chasing it.",
+    "videoUrl": "/public/videos/m-45.mp4",
+    "thumbnailUrl": "/public/images/m-45.jpg",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p33",
+    "name": "Dino Landing",
+    "price": 12.0,
+    "category": "Novelties",
+    "description": "A daytime novelty that shoots up and floats back down on a parachute with a colorful smoke trail and a small dinosaur figure attached. Perfect for kids and a great daytime activity.",
+    "videoUrl": "/public/videos/Dino-landing.mp4",
+    "thumbnailUrl": "/public/images/Dino-landing.jpg",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p34",
+    "name": "Super Dragon",
+    "price": 10.0,
+    "category": "Novelties",
+    "description": "Dragon-themed ground fountain with colorful sparkling sprays, bright flashing effects, and vivid star bursts. A fun, safe, family-friendly pick that kids love to watch up close.",
+    "videoUrl": "/public/videos/super-dragon.mp4",
+    "thumbnailUrl": "/public/images/Super-dragon.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p35",
+    "name": "Go Bananas",
+    "price": 10.0,
+    "category": "Novelties",
+    "description": "Monkey-themed fountain that starts with a bright red flame, erupts into colorful flower sparks and glitter, then finishes with cascading silver rain and a loud crackling finale. Fun, loud, and great for the price.",
+    "videoUrl": "/public/videos/go-bananas.mp4",
+    "thumbnailUrl": "/public/images/go-bananas.jpg",
+    "tags": ["Family Friendly", "Glitter"]
+  },
+  {
+    "id": "p42",
+    "name": "Mighty Max Rocket",
+    "price": 15.0,
+    "category": "Novelties",
+    "description": "A four-pack of 32-inch stick rockets that shoot high into the sky, trailing a brilliant streak of light before breaking into a bright aerial burst at the top. Light one at a time and watch them go.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/might-max-rocket.jpg",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p29",
+    "name": "Naughty Gnomes",
+    "price": 7.5,
+    "category": "Novelties",
+    "description": "A cone-shaped ground fountain with bold sparkling action, a whistling effect, and a crackling finish. Great budget add-on and the fun packaging makes it a crowd favorite with kids.",
+    "videoUrl": "/public/videos/naughty-gnome.mp4",
+    "thumbnailUrl": "/public/images/naughty-gnomes.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p43",
+    "name": "Red Devil 80/16 Firecrackers",
+    "price": 20.0,
+    "category": "Novelties",
+    "description": "Red Devil super firecrackers built for loud, fast crackling reports. A classic firecracker pack for anyone who loves noise — bold, sharp, and satisfying.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/red-devil-80-16.png",
+    "tags": ["Loud"]
+  },
+  {
+    "id": "p44",
+    "name": "Mad Dog Roll of 1000",
+    "price": 15.0,
+    "category": "Novelties",
+    "description": "A full roll of 1,000 connected firecrackers that unleash a long, rapid chain of sharp crackling reports. Perfect for making a big entrance or closing out a show with a bang.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/mad-dog-roll-of-1000.png",
+    "tags": ["Loud"]
+  },
+  {
+    "id": "p45",
+    "name": "Ground Blasters",
+    "price": 5.0,
+    "category": "Novelties",
+    "description": "A box of single crackers that each pack a loud punch. TNT-made, waterproof, and built for noise — a great budget pick for anyone who loves a big bang.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/ground-blasters-100pc.png",
+    "tags": ["Loud"]
   },
   {
     "id": "p57",
     "name": "Lion's Roar",
     "price": 120.0,
     "category": "Novelties",
-    "description": "A large Miracle assortment packed with cakes, fountains, and artillery shells — everything you need for a full variety show from one package. Great for backyard parties where you want a little of everything.",
+    "description": "A large assortment packed with cakes, fountains, and artillery shells — everything you need for a full variety show from one package. Great for backyard parties where you want a little of everything.",
     "videoUrl": null,
     "thumbnailUrl": "/public/images/lions-roar.png",
-    "tags": ["Best Value"]
+    "tags": ["Colorful"]
   },
   {
     "id": "p58",
@@ -557,7 +557,7 @@
     "description": "A ready-made backyard show in a tray — cakes, fountains, artillery shells, colorful aerial balls, and festival shells all in one box. Grab it and go, no planning needed.",
     "videoUrl": null,
     "thumbnailUrl": "/public/images/party-crasher.png",
-    "tags": ["Best Value"]
+    "tags": ["Colorful"]
   },
   {
     "id": "p59",
@@ -567,7 +567,7 @@
     "description": "A premium full-evening assortment loaded with 200-gram multi-shot cakes, artillery shells, fountains, roman candles, and other aerial items. Everything you need for a complete show — just open the box and light up the night.",
     "videoUrl": null,
     "thumbnailUrl": "/public/images/amrican-tradition.jpg",
-    "tags": ["Best Value", "Long Show"]
+    "tags": ["Colorful", "Long Show"]
   },
   {
     "id": "p60",
@@ -587,6 +587,6 @@
     "description": "Throw-down snaps that hit harder than your average snap pop — friction-sensitive and packaged for reliability. Toss one at the ground and get a satisfying loud pop every time.",
     "videoUrl": null,
     "thumbnailUrl": "/public/images/seismic-snaps.png",
-    "tags": ["Family Friendly"]
+    "tags": ["Family Friendly", "Loud"]
   }
 ]
