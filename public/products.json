@@ -77,7 +77,7 @@
     "description": "24 massive aerial shots that shake the sky with earth-rattling booms and enormous bursts. Intense, loud, and impossible to ignore — this one makes the whole neighborhood look up.",
     "videoUrl": null,
     "thumbnailUrl": "/public/images/voice-of-monster.png",
-    "tags": ["Fast-Paced"]
+    "tags": ["Loud", "Fast-Paced"]
   },
   {
     "id": "p12",
@@ -87,7 +87,7 @@
     "description": "A 34-shot patriotic showcase — silver crackling mines, red and blue comets, glowing dust, blue dahlias, and peonies in red and blue. Perfect for the Fourth of July or any time you want to light up the sky in American colors.",
     "videoUrl": "/public/videos/something-red-white-and-blue.mp4",
     "thumbnailUrl": "/public/images/something-red-white-and-blue.png",
-    "tags": ["Glitter"]
+    "tags": ["Glitter", "Blue Stars"]
   },
   {
     "id": "p06",
@@ -138,5 +138,145 @@
     "videoUrl": "/public/videos/midnight.mp4",
     "thumbnailUrl": "/public/images/midnight.jpg",
     "tags": ["Finale", "Long Show", "Palm Effect"]
+  },
+  {
+    "id": "p17",
+    "name": "Classic Canisters",
+    "price": 350.0,
+    "category": "Canister Shells",
+    "description": "Reloadable canister shell assortment with 5-inch, 6-inch, and 7-inch canisters that deliver multicolored aerial bursts and high-altitude effects.",
+    "videoUrl": "/public/videos/classic-cannisters.mp4",
+    "thumbnailUrl": "/public/images/classic-cannisters.png",
+    "tags": ["Colorful", "Loud"]
+  },
+  {
+    "id": "p18",
+    "name": "Monster 5 Inch Canister Shells",
+    "price": 180.0,
+    "category": "Canister Shells",
+    "description": "24-shot 5-inch reloadable canister shell kit with maximum-load shells, colorful large breaks, and loud high-altitude effects.",
+    "videoUrl": "/public/videos/monster-5-inch-cannister.mp4",
+    "thumbnailUrl": "/public/images/monster-5-inch-cannister.png",
+    "tags": ["Loud"]
+  },
+  {
+    "id": "p19",
+    "name": "Ameri-Cannons",
+    "price": 180.0,
+    "category": "Canister Shells",
+    "description": "24-shot canister shell kit with massive aerial bursts and a patriotic package; built for hard-hitting, high-impact sky breaks.",
+    "videoUrl": "/public/videos/ameri-cannons.mp4",
+    "thumbnailUrl": "/public/images/ameri-cannons.png",
+    "tags": ["Loud"]
+  },
+  {
+    "id": "p20",
+    "name": "Super Sized",
+    "price": 65.0,
+    "category": "Fountains",
+    "description": "Large fountain with golden leaves, crackle, colored stars, gold flowers, and dense crackling with colored stars. A big ground show that dazzles up close.",
+    "videoUrl": "/public/videos/super-sized.mp4",
+    "thumbnailUrl": "/public/images/super-sized.jpg",
+    "tags": ["Gold Brocade", "Glitter"]
+  },
+  {
+    "id": "p21",
+    "name": "Snake Pit",
+    "price": 25.0,
+    "category": "200g Cakes",
+    "description": "12-shot cake with crackling tails to purple peony and white glitter, aqua-blue and silver crackling chrysanthemums, ending with rapid wave shots to red glitter and crackle.",
+    "videoUrl": "/public/videos/snake-pit.mp4",
+    "thumbnailUrl": "/public/images/snake-pit.png",
+    "tags": ["Fast-Paced", "Color Changing"]
+  },
+  {
+    "id": "p22",
+    "name": "Pirate Captain",
+    "price": 25.0,
+    "category": "200g Cakes",
+    "description": "21-shot 200g cake with a carnival of gold, silver, and red lace effects, color stars, silver fish, and palms.",
+    "videoUrl": "/public/videos/pirate-captain.mp4",
+    "thumbnailUrl": "/public/images/pirate-captain.png",
+    "tags": ["Palm Effect", "Color Changing"]
+  },
+  {
+    "id": "p23",
+    "name": "Wild One",
+    "price": 25.0,
+    "category": "200g Cakes",
+    "description": "9-shot 200g mini rack with blue and crackle mines that rise into alternating crackle and color strobe peony breaks.",
+    "videoUrl": "/public/videos/wild-one.mp4",
+    "thumbnailUrl": "/public/images/wild-one.jpg",
+    "tags": ["Fast-Paced"]
+  },
+  {
+    "id": "p24",
+    "name": "Hulking Hurler",
+    "price": 20.0,
+    "category": "200g Cakes",
+    "description": "16-shot 200g cake with big multicolor breaks and multi-effect performance — a 200g cake that hits like a larger cake.",
+    "videoUrl": "/public/videos/hulking-hurler.mp4",
+    "thumbnailUrl": "/public/images/hulking-hurler.png",
+    "tags": ["Colorful"]
+  },
+  {
+    "id": "p25",
+    "name": "Neon Show",
+    "price": 20.0,
+    "category": "200g Cakes",
+    "description": "16-shot cake with silver chrysanthemum bouquets and brocades to red, green, sky blue, lemon, and purple stars with silver glitter and chrysanthemum effects.",
+    "videoUrl": "/public/videos/neon-show.mp4",
+    "thumbnailUrl": "/public/images/neon-show.jpg",
+    "tags": ["Colorful", "Glitter"]
+  },
+  {
+    "id": "p26",
+    "name": "Poker Party",
+    "price": 20.0,
+    "category": "200g Cakes",
+    "description": "Assorted 16-shot poker-themed cakes with brocade crown, nishiki willow, red and green tails, gold wave tails, red and blue stars, and white strobe effects.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/poker-party.png",
+    "tags": ["Color Changing", "Gold Brocade"]
+  },
+  {
+    "id": "p27",
+    "name": "Seal the Deal",
+    "price": 30.0,
+    "category": "Fountains",
+    "description": "Fountain with silver crackling and red and blue stars, red titanium, blue and gold rains, and blue showers with blue and gold rains.",
+    "videoUrl": "/public/videos/seal-the-deal.mp4",
+    "thumbnailUrl": "/public/images/seal-the-deal.png",
+    "tags": ["Colorful"]
+  },
+  {
+    "id": "p28",
+    "name": "Military Paratrooper",
+    "price": 25.0,
+    "category": "Novelties",
+    "description": "Shoots a toy soldier high into the air with crackling or smoke effects. The soldier has movable head, arms, and legs and floats back down on a parachute.",
+    "videoUrl": "/public/videos/military-paratrooper.mp4",
+    "thumbnailUrl": "/public/images/military-paratrooper.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p29",
+    "name": "Naughty Gnomes",
+    "price": 7.5,
+    "category": "Novelties",
+    "description": "Cone fountain with bold shower action, whistle, and a crackling finish. Playful kid-friendly packaging that makes a great add-on.",
+    "videoUrl": "/public/videos/naughty-gnome.mp4",
+    "thumbnailUrl": "/public/images/naughty-gnomes.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p30",
+    "name": "3 Minute",
+    "price": 17.5,
+    "category": "Fountains",
+    "description": "Long-lasting fountain with silver spring, red pistil, white cedar flowers, green stars, blue stars, silver silk crackle, titanium crackle, and red and green star effects.",
+    "videoUrl": null,
+    "thumbnailUrl": null,
+    "tags": ["Long Show"]
   }
 ]

@@ -402,7 +402,11 @@ try { _stored = JSON.parse(localStorage.getItem('wf_overrides')); } catch(e){}
 window.DB_OVERRIDES = (_stored && _stored.soldOut && _stored.prices) ? _stored : {soldOut:[], prices:{}};
 
 var CATEGORIES = [
-  { label:"500g Cakes", emoji:"🎆" },
+  { label:"500g Cakes",      emoji:"🎆" },
+  { label:"200g Cakes",      emoji:"🎇" },
+  { label:"Canister Shells", emoji:"💥" },
+  { label:"Fountains",       emoji:"✨" },
+  { label:"Novelties",       emoji:"🪂" },
 ];
 
 var TAG_CLASS = {
