@@ -398,5 +398,35 @@
     "videoUrl": null,
     "thumbnailUrl": "/public/images/might-max-rocket.jpg",
     "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p43",
+    "name": "Red Devil 80/16 Firecrackers",
+    "price": 20.0,
+    "category": "Novelties",
+    "description": "Red Devil super firecrackers built for loud, fast crackling reports. A classic firecracker pack for anyone who loves noise — bold, sharp, and satisfying.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/red-devil-80-16.png",
+    "tags": ["Loud"]
+  },
+  {
+    "id": "p44",
+    "name": "Mad Dog Roll of 1000",
+    "price": 15.0,
+    "category": "Novelties",
+    "description": "A full roll of 1,000 connected firecrackers that unleash a long, rapid chain of sharp crackling reports. Perfect for making a big entrance or closing out a show with a bang.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/mad-dog-roll-of-1000.png",
+    "tags": ["Loud"]
+  },
+  {
+    "id": "p45",
+    "name": "Ground Blasters",
+    "price": 5.0,
+    "category": "Novelties",
+    "description": "A box of single crackers that each pack a loud punch. TNT-made, waterproof, and built for noise — a great budget pick for anyone who loves a big bang.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/ground-blasters-100pc.png",
+    "tags": ["Loud", "Best Value"]
   }
 ]
