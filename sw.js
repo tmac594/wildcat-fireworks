@@ -1,11 +1,13 @@
-const CACHE = 'wildcat-v5';
+const CACHE = 'wildcat-v6';
+
+// Network-first URLs: always fetch fresh, only use cache when offline
+const NETWORK_FIRST = ['/public/products.json'];
 
 const ASSETS = [
   '/',
   '/index.html',
   '/admin.html',
   '/manifest.json',
-  '/public/products.json',
   '/public/wildcat-logo.png',
   // Images
   '/public/images/one-minute-revelry.jpg',
@@ -22,6 +24,19 @@ const ASSETS = [
   '/public/images/ghost-killer.png',
   '/public/images/double-down.png',
   '/public/images/midnight.jpg',
+  '/public/images/classic-cannisters.png',
+  '/public/images/monster-5-inch-cannister.png',
+  '/public/images/ameri-cannons.png',
+  '/public/images/super-sized.jpg',
+  '/public/images/snake-pit.png',
+  '/public/images/pirate-captain.png',
+  '/public/images/wild-one.jpg',
+  '/public/images/hulking-hurler.png',
+  '/public/images/neon-show.jpg',
+  '/public/images/poker-party.png',
+  '/public/images/seal-the-deal.png',
+  '/public/images/military-paratrooper.png',
+  '/public/images/naughty-gnomes.png',
   // Videos
   '/public/videos/one-minute-revelry.mp4',
   '/public/videos/firefly.mp4',
@@ -36,6 +51,18 @@ const ASSETS = [
   '/public/videos/ghost-killer.mp4',
   '/public/videos/double-down.mp4',
   '/public/videos/midnight.mp4',
+  '/public/videos/classic-cannisters.mp4',
+  '/public/videos/monster-5-inch-cannister.mp4',
+  '/public/videos/ameri-cannons.mp4',
+  '/public/videos/super-sized.mp4',
+  '/public/videos/snake-pit.mp4',
+  '/public/videos/pirate-captain.mp4',
+  '/public/videos/wild-one.mp4',
+  '/public/videos/hulking-hurler.mp4',
+  '/public/videos/neon-show.mp4',
+  '/public/videos/seal-the-deal.mp4',
+  '/public/videos/military-paratrooper.mp4',
+  '/public/videos/naughty-gnome.mp4',
 ];
 
 self.addEventListener('install', e => {
@@ -56,6 +83,24 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+
+  const url = new URL(e.request.url);
+
+  // Network-first: always get fresh data, fall back to cache only when offline
+  if (NETWORK_FIRST.some(path => url.pathname === path)) {
+    e.respondWith(
+      fetch(e.request).then(res => {
+        if (res && res.status === 200) {
+          const clone = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }
+        return res;
+      }).catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // Cache-first for everything else (images, videos, HTML, etc.)
   e.respondWith(
     caches.match(e.request).then(cached => {
       if (cached) return cached;
