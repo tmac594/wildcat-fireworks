@@ -438,5 +438,25 @@
     "videoUrl": "/public/videos/fire-in-motion.mp4",
     "thumbnailUrl": "/public/images/fire-in-motion.jpg",
     "tags": ["Colorful", "Best Value"]
+  },
+  {
+    "id": "p47",
+    "name": "Mighty Max Artillery Shells",
+    "price": 25.0,
+    "category": "Canister Shells",
+    "description": "Six assorted reloadable artillery shells with a launching tube included. A great entry-level shell kit that delivers big aerial breaks one shot at a time — easy to use and impressive for the price.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/might-max-assorted-artillery-shells.jpg",
+    "tags": ["Colorful"]
+  },
+  {
+    "id": "p48",
+    "name": "Dragon Artillery Shell - Assorted",
+    "price": 25.0,
+    "category": "Canister Shells",
+    "description": "Six-shot reloadable shell kit packed with a variety of effects — red, green, silver, and purple bursts, white strobing stars, brilliant blue explosions, and sparkling finales. Every shot is different.",
+    "videoUrl": "/public/videos/dragon-assorted-artillery-shells.mp4",
+    "thumbnailUrl": "/public/images/assorted-dragon-artillery-shells.jpg",
+    "tags": ["Colorful"]
   }
 ]
