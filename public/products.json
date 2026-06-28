@@ -374,9 +374,19 @@
     "name": "Danger Zone",
     "price": 6.50,
     "category": "Novelties",
-    "description": "A two-pack of handheld smoke sticks — one bold red and one bright orange — that pour out thick, vivid color smoke for a dramatic daytime effect. Great for photos, celebrations, and parties.",
+    "description": "Two-pack of handheld smoke sticks — one red and one orange — that pour out bold, vivid color smoke. Perfect for daytime celebrations, photos, and parties.",
     "videoUrl": "/public/videos/danger-zone.mp4",
-    "thumbnailUrl": null,
+    "thumbnailUrl": "/public/images/danger-zone.png",
+    "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p41",
+    "name": "M-45 Tank",
+    "price": 10.0,
+    "category": "Novelties",
+    "description": "A classic ground-based novelty by Brothers Pyrotechnics that propels itself back and forth along the ground, letting out a loud 2-stage whistle as it moves, then finishes with a final bang. Kids love chasing it.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/m-45.jpg",
     "tags": ["Family Friendly"]
   }
 ]
