@@ -578,5 +578,15 @@
     "videoUrl": null,
     "thumbnailUrl": "/public/images/neon-sparklers.png",
     "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p61",
+    "name": "Seismic Snaps",
+    "price": 5.0,
+    "category": "Novelties",
+    "description": "Throw-down snaps that hit harder than your average snap pop — friction-sensitive and packaged for reliability. Toss one at the ground and get a satisfying loud pop every time.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/seismic-snaps.png",
+    "tags": ["Family Friendly"]
   }
 ]
