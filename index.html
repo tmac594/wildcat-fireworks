@@ -355,8 +355,8 @@ body {
 <!-- FILTERS -->
 <div class="filters-bar">
   <select class="sort-select" id="sortSelect">
-    <option value="price-desc" selected>Price: High → Low</option>
-    <option value="price-asc">Price: Low → High</option>
+    <option value="price-asc" selected>Price: Low → High</option>
+    <option value="price-desc">Price: High → Low</option>
     <option value="name">Name: A–Z</option>
   </select>
 </div>
@@ -426,7 +426,7 @@ var TAG_CLASS = {
   "Palm Effect":    "tag-palm",
 };
 
-var state = { search:"", category:null, filter:null, sort:"price-desc" };
+var state = { search:"", category:null, filter:null, sort:"price-asc" };
 
 // ── CATEGORY CARDS ────────────────────────────────────────────────────────────
 var catGrid = document.getElementById("catGrid");

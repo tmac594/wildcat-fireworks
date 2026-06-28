@@ -488,5 +488,15 @@
     "videoUrl": "/public/videos/premium-5-inch.mp4",
     "thumbnailUrl": "/public/images/premium-5-inch.png",
     "tags": ["Colorful", "Loud"]
+  },
+  {
+    "id": "p52",
+    "name": "Ring of Honor",
+    "price": 60.0,
+    "category": "Canister Shells",
+    "description": "Six powerful 5-inch reloadable shells that explode into stunning ring-shaped bursts high in the sky. A dramatic, one-of-a-kind effect that looks unlike anything else in a show.",
+    "videoUrl": "/public/videos/ring-of-honor.mp4",
+    "thumbnailUrl": "/public/images/ring-of-honor.png",
+    "tags": ["Colorful"]
   }
 ]
