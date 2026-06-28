@@ -428,5 +428,15 @@
     "videoUrl": null,
     "thumbnailUrl": "/public/images/ground-blasters-100pc.png",
     "tags": ["Loud", "Best Value"]
+  },
+  {
+    "id": "p46",
+    "name": "Fire In Motion",
+    "price": 25.0,
+    "category": "Novelties",
+    "description": "140 colorful aerial shots fired from a ground-spiked tube — one after another in a continuous stream of color. A strong value add-on that keeps the sky busy throughout your show.",
+    "videoUrl": "/public/videos/fire-in-motion.mp4",
+    "thumbnailUrl": "/public/images/fire-in-motion.jpg",
+    "tags": ["Colorful", "Best Value"]
   }
 ]
