@@ -515,8 +515,28 @@
     "price": 200.0,
     "category": "500g Cakes",
     "description": "9 massive finale-rack shots that explode into enormous sparkling brocade rings, each one split with stunning two-tone color-changing star bursts. Dramatic, layered, and impossible to miss.",
-    "videoUrl": null,
+    "videoUrl": "/public/videos/monstrous-brocade-ring.mp4",
     "thumbnailUrl": "/public/images/monstrous-brocade-ring.png",
     "tags": ["Finale", "Gold Brocade", "Color Changing"]
+  },
+  {
+    "id": "p55",
+    "name": "Bonus Night",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 massive rack shots bursting with huge sparkling crown explosions, colorful falling-leaf effects drifting down from the sky, and red, silver, and green glitter finishes. Rich, layered, and showstopping.",
+    "videoUrl": "/public/videos/bonus-night.mp4",
+    "thumbnailUrl": "/public/images/bonus-night.jpg",
+    "tags": ["Finale", "Gold Brocade", "Glitter"]
+  },
+  {
+    "id": "p56",
+    "name": "Neon Jellyfish",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 stunning 3-inch rack shots that bloom into jellyfish-shaped bursts in peach, green, and blue — each one opening into colorful rings with long golden trailing tentacles. Truly unlike anything else in the sky.",
+    "videoUrl": "/public/videos/neon-jellyfish.mp4",
+    "thumbnailUrl": "/public/images/neon-jellyfish.png",
+    "tags": ["Finale", "Color Changing"]
   }
 ]
