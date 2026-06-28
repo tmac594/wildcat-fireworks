@@ -297,17 +297,20 @@ function renderProducts() {
 function updatePrice(id, val) {
   var price = parseFloat(val);
   if (isNaN(price) || price < 0) return;
-  var updated = JSON.parse(JSON.stringify(currentOverrides));
-  updated.prices[id] = price;
-  OVERRIDES_REF.set(updated).then(flashSaved);
+  // merge:true updates only this one price field — won't race with soldOut changes
+  var patch = {};
+  patch['prices.' + id] = price;
+  OVERRIDES_REF.set(patch, {merge: true}).then(flashSaved);
 }
 
 function toggleSoldOut(id) {
-  var updated = JSON.parse(JSON.stringify(currentOverrides));
-  var idx = updated.soldOut.indexOf(id);
-  if (idx > -1) { updated.soldOut.splice(idx, 1); }
-  else          { updated.soldOut.push(id); }
-  OVERRIDES_REF.set(updated).then(flashSaved);
+  var soldOut = currentOverrides.soldOut.indexOf(id) > -1;
+  // arrayUnion/arrayRemove are atomic — won't race with price changes
+  OVERRIDES_REF.set({
+    soldOut: soldOut
+      ? firebase.firestore.FieldValue.arrayRemove(id)
+      : firebase.firestore.FieldValue.arrayUnion(id)
+  }, {merge: true}).then(flashSaved);
 }
 
 function clearAll() {
