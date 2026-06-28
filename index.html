@@ -355,8 +355,7 @@ body {
 <!-- FILTERS -->
 <div class="filters-bar">
   <select class="sort-select" id="sortSelect">
-    <option value="default">Sort: Default</option>
-    <option value="price-asc">Price: Low → High</option>
+    <option value="price-asc" selected>Price: Low → High</option>
     <option value="price-desc">Price: High → Low</option>
     <option value="name">Name: A–Z</option>
   </select>
@@ -427,7 +426,7 @@ var TAG_CLASS = {
   "Palm Effect":    "tag-palm",
 };
 
-var state = { search:"", category:null, filter:null, sort:"default" };
+var state = { search:"", category:null, filter:null, sort:"price-asc" };
 
 // ── CATEGORY CARDS ────────────────────────────────────────────────────────────
 var catGrid = document.getElementById("catGrid");
@@ -678,7 +677,7 @@ overridesRef.onSnapshot(function(doc) {
 showLoading();
 fetch('public/products.json')
   .then(function(r){ return r.json(); })
-  .then(function(data){ PRODUCTS = data; render(); })
+  .then(function(data){ PRODUCTS = data.filter(function(p){ return p.thumbnailUrl || p.videoUrl; }); render(); })
   .catch(function(err){
     console.error('Failed to load products.json:', err);
     document.getElementById("productsGrid").innerHTML =
