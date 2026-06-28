@@ -379,6 +379,7 @@ body {
 <footer class="site-footer">
   <strong>Wildcat Fireworks</strong><br>
   <a href="https://maps.google.com/?q=9620+E+Hwy+62-82,+Idalou,+TX+79329" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">📍 9620 E Hwy 62-82, Idalou, TX 79329</a>
+  <div id="syncDot" style="margin-top:10px;font-size:11px;color:var(--muted);">⏳ Connecting…</div>
 </footer>
 
 <!-- MODAL -->
@@ -640,25 +641,32 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+function setSyncStatus(msg) {
+  var el = document.getElementById('syncDot');
+  if (el) el.textContent = msg;
+}
+
 function applyOverrides(data) {
   window.DB_OVERRIDES = data || {soldOut:[], prices:{}};
   if (!window.DB_OVERRIDES.soldOut) window.DB_OVERRIDES.soldOut = [];
   if (!window.DB_OVERRIDES.prices)  window.DB_OVERRIDES.prices  = {};
-  // Persist to localStorage for offline use
   try { localStorage.setItem('wf_overrides', JSON.stringify(window.DB_OVERRIDES)); } catch(e){}
   render();
 }
 
 var overridesRef = db.collection('catalog').doc('overrides');
 overridesRef.onSnapshot(function(doc) {
+  setSyncStatus('🟢 Live');
   applyOverrides(doc.exists ? doc.data() : null);
 }, function(err) {
-  console.error('Firestore live updates unavailable:', err.code, '— showing cached data');
-  // Fallback: one-time fetch
+  setSyncStatus('🔴 Offline (' + err.code + ')');
+  console.error('Firestore live updates unavailable:', err.code);
   overridesRef.get().then(function(doc) {
+    setSyncStatus('🟡 Cached');
     applyOverrides(doc.exists ? doc.data() : null);
   }).catch(function() {
-    render(); // render with whatever is in localStorage
+    setSyncStatus('🔴 No connection');
+    render();
   });
 });
 
