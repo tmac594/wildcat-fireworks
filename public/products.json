@@ -538,5 +538,45 @@
     "videoUrl": "/public/videos/neon-jellyfish.mp4",
     "thumbnailUrl": "/public/images/neon-jellyfish.png",
     "tags": ["Finale", "Color Changing"]
+  },
+  {
+    "id": "p57",
+    "name": "Lion's Roar",
+    "price": 120.0,
+    "category": "Novelties",
+    "description": "A large Miracle assortment packed with cakes, fountains, and artillery shells — everything you need for a full variety show from one package. Great for backyard parties where you want a little of everything.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/lions-roar.png",
+    "tags": ["Best Value"]
+  },
+  {
+    "id": "p58",
+    "name": "Party Crasher",
+    "price": 75.0,
+    "category": "Novelties",
+    "description": "A ready-made backyard show in a tray — cakes, fountains, artillery shells, colorful aerial balls, and festival shells all in one box. Grab it and go, no planning needed.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/party-crasher.png",
+    "tags": ["Best Value"]
+  },
+  {
+    "id": "p59",
+    "name": "American Tradition",
+    "price": 500.0,
+    "category": "Novelties",
+    "description": "A premium full-evening assortment loaded with 200-gram multi-shot cakes, artillery shells, fountains, roman candles, and other aerial items. Everything you need for a complete show — just open the box and light up the night.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/amrican-tradition.jpg",
+    "tags": ["Best Value", "Long Show"]
+  },
+  {
+    "id": "p60",
+    "name": "Neon Sparklers",
+    "price": 5.0,
+    "category": "Novelties",
+    "description": "Pack of 20-inch hand-held sparklers that shower bright sparks and light up the night. Low noise, easy to use, and perfect for photos and parties. Adult supervision required.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/neon-sparklers.png",
+    "tags": ["Family Friendly"]
   }
 ]
