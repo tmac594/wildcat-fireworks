@@ -498,5 +498,25 @@
     "videoUrl": "/public/videos/ring-of-honor.mp4",
     "thumbnailUrl": "/public/images/ring-of-honor.png",
     "tags": ["Colorful"]
+  },
+  {
+    "id": "p53",
+    "name": "Hooch",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 massive finale-rack shots packed with vivid color-changing stars that shift mid-air, then close out with a wave of drooping golden crackling showers. Big, beautiful, and built to end the night.",
+    "videoUrl": "/public/videos/hooch.mp4",
+    "thumbnailUrl": "/public/images/hooch.png",
+    "tags": ["Finale", "Color Changing"]
+  },
+  {
+    "id": "p54",
+    "name": "Monstrous Brocade Ring",
+    "price": 200.0,
+    "category": "500g Cakes",
+    "description": "9 massive finale-rack shots that explode into enormous sparkling brocade rings, each one split with stunning two-tone color-changing star bursts. Dramatic, layered, and impossible to miss.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/monstrous-brocade-ring.png",
+    "tags": ["Finale", "Gold Brocade", "Color Changing"]
   }
 ]
