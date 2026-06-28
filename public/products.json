@@ -328,5 +328,25 @@
     "videoUrl": "/public/videos/go-bananas.mp4",
     "thumbnailUrl": "/public/images/go-bananas.jpg",
     "tags": ["Family Friendly", "Glitter"]
+  },
+  {
+    "id": "p36",
+    "name": "TNT Backpack Assortment",
+    "price": 30.0,
+    "category": "Novelties",
+    "description": "A grab-and-go backpack packed with an assorted mix of TNT ground items and novelties. Perfect for families who want a variety of fun without picking individual items — everything you need in one bag.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/tnt-backpack-assortment.png",
+    "tags": ["Family Friendly", "Best Value"]
+  },
+  {
+    "id": "p37",
+    "name": "Sword Master",
+    "price": 20.0,
+    "category": "Novelties",
+    "description": "A sword-shaped novelty fountain that shoots sparkling effects right from the tip. Bold, dramatic, and a crowd favorite — a fun prop that doubles as a real firework.",
+    "videoUrl": "/public/videos/sword-master.mp4",
+    "thumbnailUrl": "/public/images/sword-master.png",
+    "tags": ["Family Friendly"]
   }
 ]
