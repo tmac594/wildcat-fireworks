@@ -388,5 +388,15 @@
     "videoUrl": null,
     "thumbnailUrl": "/public/images/m-45.jpg",
     "tags": ["Family Friendly"]
+  },
+  {
+    "id": "p42",
+    "name": "Mighty Max Rocket",
+    "price": 15.0,
+    "category": "Novelties",
+    "description": "Four-pack of 32-inch high-flying stick rockets that leave a dazzling trail and break high in the sky.",
+    "videoUrl": null,
+    "thumbnailUrl": "/public/images/might-max-rocket.jpg",
+    "tags": ["Family Friendly"]
   }
 ]
