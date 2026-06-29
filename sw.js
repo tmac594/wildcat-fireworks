@@ -1,4 +1,4 @@
-const CACHE = 'wildcat-v8';
+const CACHE = 'wildcat-v9';
 
 // Network-first URLs: always fetch fresh, only use cache when offline
 const NETWORK_FIRST = ['/public/products.json'];
