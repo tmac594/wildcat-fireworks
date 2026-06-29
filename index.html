@@ -355,9 +355,8 @@ body {
 <!-- FILTERS -->
 <div class="filters-bar">
   <select class="sort-select" id="sortSelect">
-    <option value="price-asc" selected>Price: Low → High</option>
-    <option value="price-desc">Price: High → Low</option>
-    <option value="name">Name: A–Z</option>
+    <option value="name" selected>Name: A–Z</option>
+    <option value="name-desc">Name: Z–A</option>
   </select>
 </div>
 
@@ -426,7 +425,7 @@ var TAG_CLASS = {
   "Palm Effect":    "tag-palm",
 };
 
-var state = { search:"", category:null, filter:null, sort:"price-asc" };
+var state = { search:"", category:null, filter:null, sort:"name" };
 
 // ── CATEGORY CARDS ────────────────────────────────────────────────────────────
 var catGrid = document.getElementById("catGrid");
@@ -505,7 +504,6 @@ function openModal(p, priceOverride) {
   modalBody.innerHTML =
     '<div class="modal-cat">'+p.category+'</div>'+
     '<div class="modal-name">'+p.name+'</div>'+
-    '<div class="modal-price">$'+displayPrice.toFixed(2)+'</div>'+
     '<div class="modal-desc">'+p.description+'</div>'+
     '<div class="tags">'+tagsHtml+'</div>';
 
@@ -534,17 +532,8 @@ function getFiltered() {
   if (state.category) list = list.filter(function(p){ return p.category===state.category; });
   if (state.filter)   list = list.filter(function(p){ return p.tags.indexOf(state.filter)>-1; });
   // Sort: use override price for price sorts so display matches sort order
-  if (state.sort==="price-asc")  list.sort(function(a,b){
-    var pa = overrides.prices[a.id]!=null ? overrides.prices[a.id] : a.price;
-    var pb = overrides.prices[b.id]!=null ? overrides.prices[b.id] : b.price;
-    return pa - pb;
-  });
-  if (state.sort==="price-desc") list.sort(function(a,b){
-    var pa = overrides.prices[a.id]!=null ? overrides.prices[a.id] : a.price;
-    var pb = overrides.prices[b.id]!=null ? overrides.prices[b.id] : b.price;
-    return pb - pa;
-  });
-  if (state.sort==="name") list.sort(function(a,b){ return a.name.localeCompare(b.name); });
+  if (state.sort==="name")      list.sort(function(a,b){ return a.name.localeCompare(b.name); });
+  if (state.sort==="name-desc") list.sort(function(a,b){ return b.name.localeCompare(a.name); });
   return list;
 }
 
@@ -623,7 +612,6 @@ function render() {
         '<div class="product-desc">'+p.description+'</div>'+
         '<div class="tags">'+tagsHtml+'</div>'+
         '<div class="product-footer">'+
-          '<div class="product-price">$'+price.toFixed(2)+'</div>'+
           demoBtnHtml+
         '</div>'+
       '</div>';
